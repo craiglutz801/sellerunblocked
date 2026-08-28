@@ -3,7 +3,7 @@ const BUSINESS = [
   'Increase seller productivity',
   'Reduce avoidable attrition risk',
   'Improve sales execution consistency',
-  'Make better RevOps and enablement decisions',
+  'Make better operations and enablement decisions',
   'Track improvement over time',
 ]
 

@@ -20,7 +20,7 @@ const STEPS = [
     title: 'Direct Help',
     subtitle: 'The seller receives practical resources they can use this week.',
     body: 'Each kit includes 3–5 modules such as playbooks, checklists, templates, videos, and live drills — sequenced into a lightweight learning path.',
-    example: 'Deal desk escalation playbook · CFO-ready ROI template · Pricing objection drill',
+    example: 'Pricing exception packet · Customer-reference brief · Handoff checklist',
   },
 ]
 

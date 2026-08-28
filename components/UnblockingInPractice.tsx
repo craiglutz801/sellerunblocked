@@ -3,6 +3,7 @@ import {
   UNBLOCKING_CAPABILITY_GROUPS,
   UNBLOCKING_EVIDENCE,
   UNBLOCKING_INTEGRATIONS,
+  UNBLOCKING_INTEGRATIONS_NOTE,
   UNBLOCKING_JOBS,
   UNBLOCKING_OUTCOMES,
   UNBLOCKING_TARGETED_QUESTION,
@@ -47,9 +48,14 @@ export default function UnblockingInPractice() {
             </li>
           ))}
         </ul>
+        <p className="mt-4 text-center text-xs text-warm-500 max-w-xl mx-auto leading-relaxed">
+          {UNBLOCKING_INTEGRATIONS_NOTE}
+        </p>
 
         <div className="mt-16 rounded-3xl border border-warm-400/25 bg-paper p-6 md:p-10 shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-wider text-accent-dark">Friction Detective · DemoTech</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-accent-dark">
+            Friction Detective · Northbridge Industrial
+          </p>
           <h3 className="mt-3 text-xl md:text-2xl font-semibold text-ink max-w-2xl">
             Enterprise deals are losing eight days in discount approval — and it is not a seller skill gap.
           </h3>
@@ -79,7 +85,7 @@ export default function UnblockingInPractice() {
               “{UNBLOCKING_TARGETED_QUESTION}”
             </p>
             <p className="mt-2 text-xs text-warm-500">
-              Sent to affected Enterprise AEs as a cohort. Leadership never sees named answers.
+              Sent to affected enterprise sellers as a cohort. Leadership never sees named answers.
             </p>
           </div>
 

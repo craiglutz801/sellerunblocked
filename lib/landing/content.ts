@@ -58,8 +58,8 @@ export const OPERATING_DIMENSIONS = [
   { label: 'Sales process effectiveness', desc: 'How well the sales process helps sellers move deals forward.' },
   { label: 'Technology and tool experience', desc: 'Whether tools and systems support selling rather than slow it down.' },
   { label: 'Sales enablement quality', desc: 'Training, content, and resources that help reps perform.' },
-  { label: 'Marketing alignment', desc: 'How well marketing supports pipeline and seller needs.' },
-  { label: 'Lead quality and pipeline support', desc: 'Whether leads and pipeline are set up for success.' },
+  { label: 'Marketing alignment', desc: 'How well marketing supports sellers with proof, campaigns, and customer stories.' },
+  { label: 'Opportunity quality and coverage', desc: 'Whether work entering the funnel — inbound, partner, or field-generated — is set up to close.' },
   { label: 'Compensation clarity', desc: 'How clear and fair comp and incentives are to sellers.' },
   { label: 'Internal support systems', desc: 'Deal support, operations, and cross-functional help.' },
   { label: 'Organizational alignment', desc: 'Strategy, goals, and priorities understood across the org.' },
@@ -69,7 +69,7 @@ export const STAGE_CONFIDENCE = [
   'Prospecting',
   'Discovery',
   'Qualification',
-  'Demo / Presentation',
+  'Proof / Presentation',
   'Proposal',
   'Negotiation',
   'Closing',
@@ -94,8 +94,8 @@ export const ROLE_CARDS = [
     desc: 'Understand whether the revenue organization is structurally helping sellers hit the number.',
   },
   {
-    role: 'RevOps',
-    desc: 'Identify process, tool, SLA, and support gaps before they show up in missed targets.',
+    role: 'Sales leadership',
+    desc: 'See whether the operating environment is helping sellers close — not just whether activity is high.',
   },
   {
     role: 'Sales Enablement',
@@ -106,8 +106,8 @@ export const ROLE_CARDS = [
     desc: 'See where handoffs, tooling, processes, and internal support are breaking execution.',
   },
   {
-    role: 'GTM Strategy',
-    desc: 'Connect seller experience signals to operating model, segmentation, coverage, and growth priorities.',
+    role: 'Finance & deal support',
+    desc: 'Credit, legal, pricing, and specialist teams that sit in the path of the deal.',
   },
 ]
 
@@ -159,12 +159,17 @@ export const OBJECTIONS = [
   {
     quote: 'Is this just CRM reporting?',
     response:
-      'CRM shows what happened in the pipeline. Seller Unblocked triangulates CRM, calls, calendar, content, and seller input to explain why selling is harder than it should be — then recommends the system change and the private help.',
+      'CRM shows what happened in the funnel. Seller Unblocked triangulates CRM, calls, calendar, content, and seller input to explain why selling is harder than it should be — then recommends the system change and the private help.',
+  },
+  {
+    quote: 'Is this only for software sales?',
+    response:
+      'No. The product is built for any complex B2B motion: multiple approvers, specialists in the deal, and operational distance between leadership and the field. Software is one example, not the category.',
   },
 ]
 
 export const KIT_MODULES = [
-  { type: 'Playbook', title: 'Deal Desk Escalation Playbook', duration: '15 min', focus: 'Deal Support' },
-  { type: 'Template', title: 'CFO-Ready ROI Template', duration: '15 min', focus: 'Commercial Confidence' },
-  { type: 'Drill', title: 'Pricing Objection Practice', duration: '25 min', focus: 'Negotiation' },
+  { type: 'Playbook', title: 'Pricing Exception Packet', duration: '15 min', focus: 'Deal Support' },
+  { type: 'Template', title: 'Customer-Reference Brief', duration: '15 min', focus: 'Proof' },
+  { type: 'Checklist', title: 'Sales-to-Operations Handoff', duration: '10 min', focus: 'Handoff' },
 ]

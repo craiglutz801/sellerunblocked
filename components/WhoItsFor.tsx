@@ -8,8 +8,8 @@ export default function WhoItsFor() {
           Built for Complex Revenue Organizations
         </h2>
         <p className="mt-10 text-warm-600 text-lg max-w-xl mx-auto text-center leading-relaxed">
-          SellerUnblocked is designed for companies where operational complexity creates distance between leadership and the
-          day-to-day reality of sellers.
+          Seller Unblocked is designed for companies where operational complexity creates distance between leadership and
+          the day-to-day reality of sellers — complex deals, multiple approvers, and specialists in the motion.
         </p>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {ROLE_CARDS.map((card) => (

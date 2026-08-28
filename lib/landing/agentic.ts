@@ -33,7 +33,7 @@ export const SELLER_BRANCH = {
   headline: 'Move from feedback to forward motion.',
   body: 'A private seller coach helps reps find approved resources, handle low-value admin, prepare for key moments, and use their kit in context — not a generic chat window.',
   examples: [
-    'Prepare for a CFO call',
+    'Prepare for an executive conversation',
     'Prefill a CRM update',
     'Find the right playbook',
     'Use a proposal-stage checklist',
@@ -53,7 +53,7 @@ export const SELLER_COACH_USE_CASES = [
   },
   {
     title: 'Practice',
-    description: 'Run a private role-play for pricing, ROI, competitive, or executive objections.',
+    description: 'Run a private role-play for pricing, commercial terms, competitive, or executive objections.',
   },
   {
     title: 'Apply',
@@ -90,34 +90,37 @@ export const UNBLOCKING_JOBS = [
 
 export const UNBLOCKING_INTEGRATIONS = [
   {
-    name: 'Salesforce',
-    use: 'Opportunity-change history and stage dwell — where deals actually stall.',
+    name: 'CRM',
+    use: 'Opportunity history and stage dwell — e.g. Salesforce, Dynamics, HubSpot.',
   },
   {
-    name: 'Gong',
-    use: 'Topics, trackers, and scorecards. Transcripts only with explicit permission.',
+    name: 'Conversation data',
+    use: 'Topics and trackers from call recordings — e.g. Gong, Chorus. Transcripts only with permission.',
   },
   {
-    name: 'Microsoft 365',
-    use: 'Permitted calendar and usage metadata — selling time vs. internal time.',
+    name: 'Calendar',
+    use: 'Permitted meeting-load metadata — e.g. Microsoft 365. Selling time vs. internal time.',
   },
   {
-    name: 'Seismic',
-    use: 'Content-view and usage history — what sellers can find vs. what they actually use.',
+    name: 'Content library',
+    use: 'What sellers can find vs. what they use — e.g. Seismic, Highspot, SharePoint.',
   },
 ]
 
+export const UNBLOCKING_INTEGRATIONS_NOTE =
+  'Connect the systems you already run. The categories matter more than any single vendor.'
+
 export const UNBLOCKING_EVIDENCE = [
   {
-    source: 'Salesforce',
+    source: 'CRM',
     finding: 'Enterprise deals lose ~8 days in discount approval.',
   },
   {
-    source: 'Gong',
-    finding: 'Calls repeatedly include “I need to get that approved.”',
+    source: 'Calls',
+    finding: 'Conversations repeatedly include “I need to get that approved.”',
   },
   {
-    source: 'Microsoft 365',
+    source: 'Calendar',
     finding: 'Reps are sitting in extra pricing meetings each week.',
   },
   {
@@ -132,7 +135,7 @@ export const UNBLOCKING_TARGETED_QUESTION =
 export const UNBLOCKING_OUTCOMES = [
   {
     label: 'Leadership action',
-    body: 'Recommend a simplified in-range approval policy, with RevOps + Legal Ops as owner.',
+    body: 'Recommend a simplified in-range approval policy, with Sales Ops + Legal as owner.',
   },
   {
     label: 'What AI can fix now',

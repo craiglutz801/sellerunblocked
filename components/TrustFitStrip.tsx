@@ -1,5 +1,5 @@
 const ITEMS = [
-  'Built for CROs, RevOps, Sales Ops, and Enablement',
+  'Built for CROs, sales leadership, operations, and enablement',
   'Designed for 100+ seller organizations',
   'Aggregated intelligence for leadership',
   'Private enablement for individual sellers',

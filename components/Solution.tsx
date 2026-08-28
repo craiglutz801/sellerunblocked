@@ -18,7 +18,7 @@ export default function Solution() {
           </p>
         </div>
         <p className="mt-10 text-center font-semibold text-ink text-lg max-w-xl mx-auto">
-          Not another survey tool. Not another LMS. A system for diagnosing the sales organization and helping sellers
+          Not another survey tool. Not another training library. A system for diagnosing the sales organization and helping sellers
           improve inside it.
         </p>
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

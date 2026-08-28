@@ -11,6 +11,7 @@ const TYPE_COLORS: Record<string, string> = {
   Playbook: 'bg-sky-100 text-sky-800',
   Template: 'bg-emerald-100 text-emerald-800',
   Drill: 'bg-violet-100 text-violet-800',
+  Checklist: 'bg-amber-100 text-amber-900',
 }
 
 export default function EnablementKits() {
