@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import SectionHeader from '@/components/app/SectionHeader'
 import FrictionHeatmap from '@/components/app/FrictionHeatmap'
+import FrictionDetectivePanel from '@/components/app/FrictionDetectivePanel'
 import PillarCard from '@/components/app/cards/PillarCard'
 import ScoreCard from '@/components/app/cards/ScoreCard'
 import TrendSparkline from '@/components/app/charts/TrendSparkline'
@@ -114,6 +115,8 @@ export default function OverviewPage() {
         </p>
         <FrictionHeatmap cells={MOCK_HEATMAP} />
       </section>
+
+      <FrictionDetectivePanel />
 
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
         <div>

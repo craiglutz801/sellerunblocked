@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 const NAV = [
   { label: 'Product', href: '#solution' },
+  { label: 'Unblocking', href: '#unblocking' },
   { label: 'Enablement Kits', href: '#enablement-kits' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: "Who It's For", href: '#who-its-for' },

@@ -45,6 +45,8 @@ export const MOCK_THEMES = buildThemeClusters()
 
 export const MOCK_INSIGHTS = buildInsights(PILLARS)
 
+export { DEAL_DESK_EVIDENCE, DEAL_DESK_QUESTION, FRICTION_DETECTIVE_CASE } from '@/lib/data/demotech/aggregates'
+
 export const MOCK_DIMENSIONS = buildDimensions()
 
 export const MOCK_DRIVERS = buildDrivers()

@@ -20,7 +20,7 @@ export const CAPABILITIES = [
   {
     title: 'AI Action Layer',
     description:
-      'Turn seller signals into practical next steps — from leadership priorities and root-cause briefs to private seller guidance and focused enablement.',
+      'Find the friction, fix what AI can, and show leadership what must change — from root-cause briefs and approval packages to private kits and seller guidance.',
     badge: 'New' as const,
   },
   {
@@ -34,7 +34,7 @@ export const CAPABILITIES = [
 export const HOW_IT_WORKS_STEPS = [
   {
     title: 'Gather Seller Insight',
-    body: 'Structured programs collect quantitative and qualitative feedback about the systems, processes, tools, enablement, and support structures affecting seller performance.',
+    body: 'Structured programs collect what sellers experience. Permitted operational metadata from CRM, calls, calendar, and content usage joins that signal — without treating any one source as truth.',
   },
   {
     title: 'Diagnose the Organization',
@@ -154,7 +154,12 @@ export const OBJECTIONS = [
   {
     quote: 'Is this just another AI copilot?',
     response:
-      'No. Generic copilots begin with a prompt. SellerUnblocked begins with a diagnostic of the seller environment — then uses that context to guide leadership action and provide private support that is relevant to the seller’s real friction.',
+      'No. Generic copilots begin with a prompt. Seller Unblocked begins with a diagnostic of the seller environment, triangulates permitted system evidence, then uses that context to guide leadership action and provide private support for the seller’s real friction.',
+  },
+  {
+    quote: 'Is this just CRM reporting?',
+    response:
+      'CRM shows what happened in the pipeline. Seller Unblocked triangulates CRM, calls, calendar, content, and seller input to explain why selling is harder than it should be — then recommends the system change and the private help.',
   },
 ]
 

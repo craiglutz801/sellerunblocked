@@ -27,6 +27,14 @@ export type FrictionCell = {
   intensity: number
 }
 
+export type EvidenceSourceKind = 'system' | 'seller' | 'question'
+
+export type EvidenceSource = {
+  kind: EvidenceSourceKind
+  label: string
+  detail: string
+}
+
 export type Recommendation = {
   id: string
   title: string
@@ -45,6 +53,8 @@ export type Recommendation = {
   category: string
   evidenceSummary: string
   followUpMetric: string
+  evidenceSources?: EvidenceSource[]
+  targetedQuestion?: string
 }
 
 export type Insight = {
@@ -53,6 +63,7 @@ export type Insight = {
   headline: string
   body: string
   severity: 'positive' | 'neutral' | 'risk'
+  sources?: EvidenceSource[]
 }
 
 export type ThemeCluster = {

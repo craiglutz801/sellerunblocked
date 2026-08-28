@@ -13,7 +13,7 @@ export default function InsightsPage() {
       <SectionHeader
         eyebrow="Insights"
         title="Patterns, variance, and risks — not another chart gallery."
-        description="Insights layer turns diagnostics into executive meaning: themes, segment variance, benchmark context, and anomalies. AI-generated narratives will cite evidence (scores, quotes, segments) in production."
+        description="Insights layer turns diagnostics into executive meaning: themes, segment variance, benchmark context, and anomalies. When system evidence is connected, insights cite Salesforce, Gong, calendar metadata, and seller input — never named individuals."
       />
 
       <div className="rounded-2xl border border-accent/25 bg-accent/10 p-6 md:p-8 mb-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">

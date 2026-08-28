@@ -9,9 +9,9 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'SellerUnblocked — Revenue Organization Intelligence & Seller Enablement Kits',
+  title: 'Seller Unblocked — AI-Powered Seller Optimization Platform',
   description:
-    'SellerUnblocked helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.',
+    'Seller Unblocked finds what prevents sellers from selling, fixes what it can, and shows leadership what needs to change — with private enablement kits for every rep.',
 }
 
 export default function RootLayout({

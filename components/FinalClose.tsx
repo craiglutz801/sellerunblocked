@@ -11,8 +11,9 @@ export default function FinalClose() {
             understanding and improving the environment in which sellers operate.
           </p>
           <p>
-            SellerUnblocked gives revenue leaders a structured system for measuring, diagnosing, and improving that
-            environment — while giving sellers personalized support they can use immediately.
+            Seller Unblocked gives revenue leaders a structured system for measuring, diagnosing, and improving that
+            environment — while giving sellers personalized support they can use immediately. Seller insight stays the
+            human signal; systems make it undeniable.
           </p>
         </div>
         <p className="mt-12 text-xl font-semibold text-accent-light max-w-lg mx-auto">
