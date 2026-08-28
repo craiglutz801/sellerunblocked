@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /home/ubuntu/SellerEXP
+cd /home/ubuntu/SellerUnblocked
 
 echo "==> Node"
 if ! command -v node >/dev/null 2>&1 || [[ "$(node -v 2>/dev/null || true)" != v20* ]]; then
@@ -15,24 +15,24 @@ echo "==> Nginx"
 sudo apt-get update -qq
 sudo apt-get install -y nginx
 sudo rm -f /etc/nginx/sites-enabled/default
-sudo cp /home/ubuntu/SellerEXP/deploy/nginx-sellerexp.conf /etc/nginx/sites-available/sellerexp
-sudo ln -sf /etc/nginx/sites-available/sellerexp /etc/nginx/sites-enabled/sellerexp
+sudo cp /home/ubuntu/SellerUnblocked/deploy/nginx-sellerunblocked.conf /etc/nginx/sites-available/sellerunblocked
+sudo ln -sf /etc/nginx/sites-available/sellerunblocked /etc/nginx/sites-enabled/sellerunblocked
 sudo nginx -t
 sudo systemctl enable nginx
 sudo systemctl reload nginx
 
-echo "==> Build SellerEXP"
+echo "==> Build SellerUnblocked"
 npm ci
 npm run build
 
-echo "==> systemd: sellerexp"
-sudo cp /home/ubuntu/SellerEXP/deploy/sellerexp.service /etc/systemd/system/sellerexp.service
+echo "==> systemd: sellerunblocked"
+sudo cp /home/ubuntu/SellerUnblocked/deploy/sellerunblocked.service /etc/systemd/system/sellerunblocked.service
 sudo systemctl daemon-reload
-sudo systemctl enable sellerexp
-sudo systemctl restart sellerexp
+sudo systemctl enable sellerunblocked
+sudo systemctl restart sellerunblocked
 
 sleep 2
-sudo systemctl --no-pager status sellerexp || true
+sudo systemctl --no-pager status sellerunblocked || true
 curl -sS -o /dev/null -w "localhost:3001 -> HTTP %{http_code}\n" http://127.0.0.1:3001/ || true
 curl -sS -o /dev/null -w "nginx:80 -> HTTP %{http_code}\n" http://127.0.0.1/ || true
 

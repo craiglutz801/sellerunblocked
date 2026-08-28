@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 const LINKS = [
   { label: 'Product', href: '#solution' },
+  { label: 'Unblocking', href: '#unblocking' },
   { label: 'Enablement Kits', href: '#enablement-kits' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: "Who It's For", href: '#who-its-for' },
@@ -16,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <Link href="/" className="text-lg font-semibold text-ink">
-              SellerEXP
+              SellerUnblocked
             </Link>
             <p className="mt-2 text-sm text-warm-500">Revenue Organization Intelligence</p>
             <p className="mt-1 text-xs text-warm-400">

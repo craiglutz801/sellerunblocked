@@ -5,14 +5,14 @@ const STEPS = [
     num: '1',
     title: 'Acknowledgment',
     subtitle: 'The seller sees that their experience was heard.',
-    body: 'SellerEXP mirrors the seller’s feedback in supportive language, externalizes systemic friction, and sets the expectation that the kit is designed to help — not judge.',
+    body: 'SellerUnblocked mirrors the seller’s feedback in supportive language, externalizes systemic friction, and sets the expectation that the kit is designed to help — not judge.',
     example: '“You flagged that pricing guidance changes depending on who reviews the deal. That kind of inconsistency creates real drag.”',
   },
   {
     num: '2',
     title: 'Focus Areas',
     subtitle: 'The kit identifies where support will matter most.',
-    body: 'SellerEXP highlights up to three focus areas based on personal scores, stage confidence, and gaps versus relevant peer averages.',
+    body: 'SellerUnblocked highlights up to three focus areas based on personal scores, stage confidence, and gaps versus relevant peer averages.',
     example: 'Support: 42 vs 48 org avg · Alignment: 38 vs 57 · Negotiate stage: confidence gap',
   },
   {
@@ -20,7 +20,7 @@ const STEPS = [
     title: 'Direct Help',
     subtitle: 'The seller receives practical resources they can use this week.',
     body: 'Each kit includes 3–5 modules such as playbooks, checklists, templates, videos, and live drills — sequenced into a lightweight learning path.',
-    example: 'Deal desk escalation playbook · CFO-ready ROI template · Pricing objection drill',
+    example: 'Pricing exception packet · Customer-reference brief · Handoff checklist',
   },
 ]
 
@@ -54,7 +54,7 @@ export default function KitAnatomy() {
           ))}
         </div>
         <p className="mt-14 text-center text-lg font-medium text-ink max-w-2xl mx-auto">
-          Empathy without action feels hollow. Action without empathy feels punitive. SellerEXP combines both.
+          Empathy without action feels hollow. Action without empathy feels punitive. SellerUnblocked combines both.
         </p>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import type {
   DimensionRow,
   DriverRow,
+  EvidenceSource,
   FrictionCell,
   Insight,
   PillarKey,
@@ -269,6 +270,46 @@ export function buildThemeClusters(): ThemeCluster[] {
     .slice(0, 4)
 }
 
+export const DEAL_DESK_EVIDENCE: EvidenceSource[] = [
+  {
+    kind: 'system',
+    label: 'Salesforce',
+    detail: 'Enterprise deals lose ~8 days in discount approval versus commercial peers.',
+  },
+  {
+    kind: 'system',
+    label: 'Gong',
+    detail: 'Topics and trackers fire on “I need to get that approved” in late-stage calls.',
+  },
+  {
+    kind: 'system',
+    label: 'Microsoft 365',
+    detail: 'Enterprise AEs attend extra internal pricing meetings each week (calendar metadata).',
+  },
+  {
+    kind: 'seller',
+    label: 'Seller insight',
+    detail: 'Support pillar is lowest; 22% of quotes mention legal / deal desk wait time.',
+  },
+  {
+    kind: 'question',
+    label: 'Targeted question',
+    detail: 'Your quotes are taking four days longer than average — what happens after submission?',
+  },
+]
+
+export const DEAL_DESK_QUESTION =
+  'Your quotes are taking four days longer than average — what happens after submission?'
+
+export const FRICTION_DETECTIVE_CASE = {
+  eyebrow: 'Friction Detective',
+  headline: 'Enterprise deals lose eight days in discount approval — not a seller skill gap.',
+  body: 'Salesforce, Gong, calendar metadata, and seller insight agree. One targeted question confirmed where the breakdown occurs. Leadership sees the cohort pattern, not named reps.',
+  cohort: 'Enterprise AEs · aggregated',
+  recommendationId: 'rec-1' as const,
+  sources: DEAL_DESK_EVIDENCE,
+}
+
 export function buildRecommendations(pillars: PillarScore[]): Recommendation[] {
   const sorted = [...pillars].sort((a, b) => a.score - b.score)
   const support = sorted.find((p) => p.key === 'support')!
@@ -290,8 +331,10 @@ export function buildRecommendations(pillars: PillarScore[]): Recommendation[] {
       impactAxis: 5,
       confidence: 84,
       category: 'Internal support',
-      evidenceSummary: `${getAllResponses().length} DemoTech responses; Support pillar lowest; 22% of quotes mention legal/deal desk.`,
-      followUpMetric: 'P95 exception + legal review time',
+      evidenceSummary: `${getAllResponses().length} DemoTech responses; Support pillar lowest; Salesforce stage dwell + Gong approval trackers + calendar metadata confirm an internal bottleneck.`,
+      followUpMetric: 'P95 approval time and Negotiate-stage conversion (deal velocity)',
+      evidenceSources: DEAL_DESK_EVIDENCE,
+      targetedQuestion: DEAL_DESK_QUESTION,
     },
     {
       id: 'rec-2',
@@ -337,6 +380,14 @@ export function buildInsights(pillars: PillarScore[]): Insight[] {
   const comSupport = likertToScore(pillarAvg(commercial, 'support'))
 
   return [
+    {
+      id: 'in-0',
+      type: 'Friction Detective',
+      headline: 'Discount approval stall is internal — four systems plus one question, no named reps',
+      body: 'Enterprise deals lose ~8 days in approval. Gong trackers, extra pricing meetings, and seller quotes point to the same bottleneck. Affected AEs were asked one question; leadership sees the aggregated cause, not individual calendars or transcripts.',
+      severity: 'risk',
+      sources: DEAL_DESK_EVIDENCE,
+    },
     {
       id: 'in-1',
       type: 'Segment variance',
@@ -427,7 +478,7 @@ export function buildBenchmark() {
     internalTopTeam: Math.min(92, score + 12),
     peerMedian: 72,
     yourScore: score,
-    label: 'External peer set: B2B SaaS demo & sales-tech, 100–600 sellers (n=24 orgs, SellerEXP benchmark)',
+    label: 'External peer set: B2B SaaS demo & sales-tech, 100–600 sellers (n=24 orgs, SellerUnblocked benchmark)',
   }
 }
 

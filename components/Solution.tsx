@@ -5,11 +5,11 @@ export default function Solution() {
     <section id="solution" className="section-padding bg-cream">
       <div className="container-wide">
         <h2 className="text-section font-bold text-ink text-center max-w-3xl mx-auto">
-          SellerEXP Is a Closed-Loop Revenue Organization Intelligence Platform
+          SellerUnblocked Is a Closed-Loop Revenue Organization Intelligence Platform
         </h2>
         <div className="mt-10 max-w-2xl mx-auto space-y-4 text-warm-600 text-lg text-center leading-relaxed">
           <p>
-            SellerEXP helps leadership understand whether the sales organization is truly set up to win — and helps
+            SellerUnblocked helps leadership understand whether the sales organization is truly set up to win — and helps
             sellers act on the specific friction affecting their performance.
           </p>
           <p>
@@ -18,7 +18,7 @@ export default function Solution() {
           </p>
         </div>
         <p className="mt-10 text-center font-semibold text-ink text-lg max-w-xl mx-auto">
-          Not another survey tool. Not another LMS. A system for diagnosing the sales organization and helping sellers
+          Not another survey tool. Not another training library. A system for diagnosing the sales organization and helping sellers
           improve inside it.
         </p>
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

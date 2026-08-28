@@ -1,10 +1,10 @@
-# SellerEXP Landing Page Architecture & Design Doc — V2
+# SellerUnblocked Landing Page Architecture & Design Doc — V2
 
-**Purpose:** Update the SellerEXP marketing landing page to introduce **IC Enablement Kits** as a core product breakthrough, not a secondary feature.
+**Purpose:** Update the SellerUnblocked marketing landing page to introduce **IC Enablement Kits** as a core product breakthrough, not a secondary feature.
 
 **Audience for this doc:** Cursor / engineering / product builder
 
-**Primary goal:** Make the landing page communicate that SellerEXP is not only a leadership intelligence platform. It is a closed-loop revenue organization system that turns seller feedback into two outcomes:
+**Primary goal:** Make the landing page communicate that SellerUnblocked is not only a leadership intelligence platform. It is a closed-loop revenue organization system that turns seller feedback into two outcomes:
 
 1. **Leadership intelligence** — aggregated diagnostics, themes, benchmarks, and system-level recommendations.
 2. **Seller enablement** — private, personalized kits that help individual sellers improve immediately.
@@ -15,11 +15,11 @@
 
 ### Current landing page story
 
-The current landing page positions SellerEXP as a **Revenue Organization Intelligence** platform for CROs, RevOps, Sales Ops, Enablement, and GTM Strategy leaders. The current flow tells a strong executive story:
+The current landing page positions SellerUnblocked as a **Revenue Organization Intelligence** platform for CROs, RevOps, Sales Ops, Enablement, and GTM Strategy leaders. The current flow tells a strong executive story:
 
 - Revenue teams measure outcomes but not the operating environment producing them.
 - Hidden friction hurts productivity, retention, and execution.
-- SellerEXP diagnoses the seller environment through structured insight, analytics, benchmarking, and AI recommendations.
+- SellerUnblocked diagnoses the seller environment through structured insight, analytics, benchmarking, and AI recommendations.
 - The product is not another survey tool; it is a system for diagnosing and improving sales org performance.
 
 This is good and should remain the foundation.
@@ -28,9 +28,9 @@ This is good and should remain the foundation.
 
 The IC Enablement Kits create a much stronger category story:
 
-> **SellerEXP does not just tell leaders what is broken. It helps every seller act on what they personally need.**
+> **SellerUnblocked does not just tell leaders what is broken. It helps every seller act on what they personally need.**
 
-This moves SellerEXP from:
+This moves SellerUnblocked from:
 
 > survey → dashboard → leadership action
 
@@ -38,11 +38,11 @@ To:
 
 > survey → organizational intelligence **plus** private seller enablement
 
-That is the sharper wedge. Most tools stop at dashboards. SellerEXP closes the loop.
+That is the sharper wedge. Most tools stop at dashboards. SellerUnblocked closes the loop.
 
 ### Updated positioning
 
-**SellerEXP is the Revenue Organization Intelligence platform that diagnoses hidden sales friction and turns seller feedback into immediate leadership action and personalized enablement for every rep.**
+**SellerUnblocked is the Revenue Organization Intelligence platform that diagnoses hidden sales friction and turns seller feedback into immediate leadership action and personalized enablement for every rep.**
 
 ### Updated one-line pitch
 
@@ -81,9 +81,9 @@ Neither closes the loop well.
 
 The rep who raised the issue often gets no useful help. Leadership may see themes, but the individual seller experiences feedback as a one-way vent.
 
-### Act 4 — SellerEXP closes the loop
+### Act 4 — SellerUnblocked closes the loop
 
-SellerEXP uses one structured diagnostic spine to produce two valuable outcomes:
+SellerUnblocked uses one structured diagnostic spine to produce two valuable outcomes:
 
 - **For leadership:** aggregated intelligence, trends, benchmarks, friction themes, and recommendations.
 - **For IC sellers:** private, AI-curated enablement kits based on their own feedback, scores, stage confidence, and context.
@@ -129,7 +129,7 @@ The sequence should create this realization:
 1. Leaders cannot see the seller environment clearly.
 2. Hidden friction creates real revenue cost.
 3. Collecting feedback alone does not solve the problem.
-4. SellerEXP creates a closed loop: intelligence for leadership, enablement for sellers.
+4. SellerUnblocked creates a closed loop: intelligence for leadership, enablement for sellers.
 
 ---
 
@@ -242,7 +242,7 @@ Use the recommended headline unless the existing page style strongly favors long
 
 ### Hero subheadline
 
-SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health, revealing operational friction, and turning seller feedback into personalized enablement kits for every rep.
+SellerUnblocked gives revenue leaders a continuous intelligence system for measuring sales org health, revealing operational friction, and turning seller feedback into personalized enablement kits for every rep.
 
 ### Hero support bullets
 
@@ -351,7 +351,7 @@ Current comparison likely shows:
 
 Add a third column or lower callout:
 
-**What SellerEXP activates**
+**What SellerUnblocked activates**
 
 - System-level priorities
 - Enablement gaps
@@ -365,7 +365,7 @@ Use three cards:
 
 1. **Outcomes leaders track**
 2. **Friction they usually miss**
-3. **Actions SellerEXP activates**
+3. **Actions SellerUnblocked activates**
 
 This evolves the section from insight-only to action-oriented.
 
@@ -385,7 +385,7 @@ This evolves the section from insight-only to action-oriented.
 
 Add this paragraph after the existing narrative:
 
-And while leadership works on systemic fixes, sellers still need help today. A delayed deal desk SLA, confusing handoff process, weak ROI story, or unclear stage expectation can affect the next opportunity on their calendar. SellerEXP helps the organization improve while giving sellers practical support immediately.
+And while leadership works on systemic fixes, sellers still need help today. A delayed deal desk SLA, confusing handoff process, weak ROI story, or unclear stage expectation can affect the next opportunity on their calendar. SellerUnblocked helps the organization improve while giving sellers practical support immediately.
 
 ### Design update
 
@@ -420,7 +420,7 @@ Most revenue organizations have two disconnected systems:
 - A feedback system that tells leadership what sellers are experiencing
 - An enablement system that sends broad training to the field
 
-The problem is that those systems rarely talk to each other. SellerEXP connects them.
+The problem is that those systems rarely talk to each other. SellerUnblocked connects them.
 
 ### Visual design
 
@@ -445,7 +445,7 @@ Label: **Open loop**
 ```text
 Seller feedback
       ↓
-SellerEXP diagnostic spine
+SellerUnblocked diagnostic spine
       ├── Leadership intelligence
       └── Personalized seller kit
       ↓
@@ -468,11 +468,11 @@ Label: **Closed loop**
 
 ### Updated headline
 
-**SellerEXP Is a Closed-Loop Revenue Organization Intelligence Platform**
+**SellerUnblocked Is a Closed-Loop Revenue Organization Intelligence Platform**
 
 ### Updated narrative
 
-SellerEXP helps leadership understand whether the sales organization is truly set up to win — and helps sellers act on the specific friction affecting their performance.
+SellerUnblocked helps leadership understand whether the sales organization is truly set up to win — and helps sellers act on the specific friction affecting their performance.
 
 The platform combines structured seller insight, operational diagnostics, advanced analytics, benchmarking, AI recommendations, and private IC enablement kits.
 
@@ -616,7 +616,7 @@ Every seller gets a private, AI-curated kit built from their own responses — h
 
 ### Main narrative
 
-SellerEXP extends beyond executive dashboards with a private seller center. After each measurement cycle, reps receive a tailored enablement kit based on their scores, stage confidence, open-text feedback, and role context.
+SellerUnblocked extends beyond executive dashboards with a private seller center. After each measurement cycle, reps receive a tailored enablement kit based on their scores, stage confidence, open-text feedback, and role context.
 
 The experience is supportive, not punitive. It validates what the seller is experiencing, identifies a few focus areas, and recommends practical modules they can use right away.
 
@@ -726,7 +726,7 @@ The seller sees that their experience was heard.
 
 Body:
 
-SellerEXP mirrors the seller’s feedback in supportive language, externalizes systemic friction, and sets the expectation that the kit is designed to help — not judge.
+SellerUnblocked mirrors the seller’s feedback in supportive language, externalizes systemic friction, and sets the expectation that the kit is designed to help — not judge.
 
 Example:
 
@@ -744,7 +744,7 @@ The kit identifies where support will matter most.
 
 Body:
 
-SellerEXP highlights up to three focus areas based on personal scores, stage confidence, and gaps versus relevant peer averages.
+SellerUnblocked highlights up to three focus areas based on personal scores, stage confidence, and gaps versus relevant peer averages.
 
 Example:
 
@@ -774,7 +774,7 @@ Example:
 
 ### Bottom proof / principle line
 
-**Empathy without action feels hollow. Action without empathy feels punitive. SellerEXP combines both.**
+**Empathy without action feels hollow. Action without empathy feels punitive. SellerUnblocked combines both.**
 
 ### Component name
 
@@ -801,10 +801,10 @@ Example:
 | Step | Title | Description |
 |---|---|---|
 | 1 | Gather Seller Insight | Structured programs collect quantitative and qualitative feedback about the systems, processes, tools, enablement, and support structures affecting seller performance. |
-| 2 | Diagnose the Organization | SellerEXP identifies patterns, friction points, operating gaps, and areas of misalignment across roles, segments, and teams. |
+| 2 | Diagnose the Organization | SellerUnblocked identifies patterns, friction points, operating gaps, and areas of misalignment across roles, segments, and teams. |
 | 3 | Deliver Leadership Intelligence | Executives receive dashboards, summaries, benchmark views, and AI-guided recommendations on what is helping or hurting sellers. |
 | 4 | Generate Seller Kits | Each IC receives a private enablement kit based on their own feedback, scores, stage confidence, and context. |
-| 5 | Improve and Track Progress | Leaders fix systemic issues while sellers use targeted resources. SellerEXP tracks whether the seller experience improves over time. |
+| 5 | Improve and Track Progress | Leaders fix systemic issues while sellers use targeted resources. SellerUnblocked tracks whether the seller experience improves over time. |
 
 ### Visual
 
@@ -898,7 +898,7 @@ This is essential. The IC Kits concept is powerful, but it can create fear if no
 
 ### Subheadline
 
-SellerEXP is designed to help sellers without turning feedback into individual surveillance.
+SellerUnblocked is designed to help sellers without turning feedback into individual surveillance.
 
 ### Layout
 
@@ -1059,7 +1059,7 @@ Keep the $75K–$250K+ seller replacement point currently used.
 
 Add copy:
 
-SellerEXP also improves the ROI of your existing enablement investment. Most companies already have playbooks, templates, battlecards, LMS content, call recordings, and training materials. The issue is not always content creation. The issue is matching the right resource to the right seller at the right moment.
+SellerUnblocked also improves the ROI of your existing enablement investment. Most companies already have playbooks, templates, battlecards, LMS content, call recordings, and training materials. The issue is not always content creation. The issue is matching the right resource to the right seller at the right moment.
 
 IC Enablement Kits turn existing enablement assets into targeted seller support.
 
@@ -1101,10 +1101,10 @@ Keep current objections:
 
 ### Add new objections
 
-| Common objection | SellerEXP response |
+| Common objection | SellerUnblocked response |
 |---|---|
-| “We already have enablement content.” | SellerEXP does not replace your content library. It makes it more useful by matching the right resource to the right seller based on actual friction signals. |
-| “Will sellers trust this?” | SellerEXP separates leadership visibility from rep-owned personalization. Leadership sees patterns. Sellers receive private help. |
+| “We already have enablement content.” | SellerUnblocked does not replace your content library. It makes it more useful by matching the right resource to the right seller based on actual friction signals. |
+| “Will sellers trust this?” | SellerUnblocked separates leadership visibility from rep-owned personalization. Leadership sees patterns. Sellers receive private help. |
 | “Is this a performance management tool?” | No. IC Kits are designed as support, not surveillance. The language, privacy model, and data access rules should prevent rep-level scorecarding. |
 | “Could this overwhelm sellers?” | Kits are intentionally capped at 3–5 modules and focused on the top 2–3 areas where help will matter most. |
 | “What if AI recommends the wrong content?” | AI should curate from approved enablement content first. Human review and catalog controls can be added for production deployments. |
@@ -1123,7 +1123,7 @@ Keep it. It is strong.
 
 Companies invest heavily in understanding customers. But the next frontier of revenue intelligence is understanding and improving the environment in which sellers operate.
 
-SellerEXP gives revenue leaders a structured system for measuring, diagnosing, and improving that environment — while giving sellers personalized support they can use immediately.
+SellerUnblocked gives revenue leaders a structured system for measuring, diagnosing, and improving that environment — while giving sellers personalized support they can use immediately.
 
 ### Final line
 
@@ -1143,7 +1143,7 @@ SellerEXP gives revenue leaders a structured system for measuring, diagnosing, a
 
 ### Subheadline
 
-Book a 20-minute overview to see how SellerEXP reveals hidden friction, prioritizes operational improvements, and turns seller feedback into personalized enablement kits.
+Book a 20-minute overview to see how SellerUnblocked reveals hidden friction, prioritizes operational improvements, and turns seller feedback into personalized enablement kits.
 
 ### CTA buttons
 
@@ -1379,7 +1379,7 @@ Use in hero.
 
 Structure:
 
-- Center node: “SellerEXP Diagnostic Spine”
+- Center node: “SellerUnblocked Diagnostic Spine”
 - Left card: Leadership Intelligence
 - Right card: Seller Enablement Kit
 
@@ -1462,11 +1462,11 @@ Use these throughout the page:
 
 ### Page title
 
-SellerEXP — Revenue Organization Intelligence & Seller Enablement Kits
+SellerUnblocked — Revenue Organization Intelligence & Seller Enablement Kits
 
 ### Meta description
 
-SellerEXP helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.
+SellerUnblocked helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.
 
 ### Suggested keywords / concepts
 
@@ -1520,11 +1520,11 @@ SellerEXP helps revenue leaders diagnose sales org friction and turn seller feed
 
 The updated landing page is successful if a first-time visitor understands the following within 30 seconds:
 
-1. SellerEXP is for revenue leaders, not HR.
-2. SellerEXP measures the operating environment that affects sales performance.
-3. SellerEXP reveals friction that revenue metrics alone do not explain.
-4. SellerEXP gives leaders aggregated intelligence and recommendations.
-5. SellerEXP also gives individual sellers private enablement kits.
+1. SellerUnblocked is for revenue leaders, not HR.
+2. SellerUnblocked measures the operating environment that affects sales performance.
+3. SellerUnblocked reveals friction that revenue metrics alone do not explain.
+4. SellerUnblocked gives leaders aggregated intelligence and recommendations.
+5. SellerUnblocked also gives individual sellers private enablement kits.
 6. The IC Kits are personalized, supportive, and practical.
 7. Leadership does not get individual rep surveillance.
 8. This is meaningfully different from a survey tool or LMS.
@@ -1533,11 +1533,11 @@ The updated landing page is successful if a first-time visitor understands the f
 
 ## 34. Final implementation instruction to Cursor
 
-Do not treat IC Enablement Kits as a small add-on feature. Treat them as the proof that SellerEXP closes the loop.
+Do not treat IC Enablement Kits as a small add-on feature. Treat them as the proof that SellerUnblocked closes the loop.
 
 The page should still sell to executives, but the breakthrough should be obvious:
 
-> SellerEXP is the system that turns seller feedback into leadership intelligence and immediate seller enablement.
+> SellerUnblocked is the system that turns seller feedback into leadership intelligence and immediate seller enablement.
 
 Build the new sections using the existing landing page styling and component conventions. Preserve the premium, strategic feel of the current page while adding enough product specificity that buyers can clearly understand how the IC Kits work.
 

@@ -21,12 +21,12 @@ export default function AgenticActionLayer() {
           Intelligence Is Useful. Action Is What Changes the Revenue System.
         </h2>
         <p className="mt-6 text-lg text-warm-600 text-center max-w-2xl mx-auto leading-relaxed">
-          SellerEXP uses an AI action layer to connect what sellers are experiencing with the next best move for the
-          people who can act on it. Leaders get clearer priorities. Sellers get private, practical guidance for the
-          work in front of them.
+          Seller Unblocked uses an AI action layer to connect what sellers are experiencing — and what systems show —
+          with the next best move for the people who can act on it. Leaders get clearer priorities. Sellers get private,
+          practical guidance for the work in front of them.
         </p>
 
-        <div className="mt-16" role="img" aria-label="Seller signals flow through SellerEXP intelligence to an AI action layer, which branches into leadership action and seller help.">
+        <div className="mt-16" role="img" aria-label="Seller signals and system evidence flow through Seller Unblocked intelligence to an AI action layer, which branches into leadership action and seller help.">
           {/* Desktop: horizontal flow */}
           <div className="hidden lg:block">
             <div className="flex items-stretch justify-center gap-3">
@@ -34,7 +34,7 @@ export default function AgenticActionLayer() {
                 const Icon = STAGE_ICONS[stage.icon]
                 return (
                   <div key={stage.label} className="flex items-center gap-3">
-                    <div className="rounded-2xl border border-warm-400/25 bg-cream/50 p-6 w-[200px] h-full">
+                    <div className="rounded-2xl border border-warm-400/25 bg-cream/50 p-6 w-[220px] h-full">
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent-dark">
                         <Icon className="h-4 w-4" aria-hidden />
                       </div>

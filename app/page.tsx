@@ -7,6 +7,7 @@ import BrokenFeedbackLoop from '@/components/BrokenFeedbackLoop'
 import Solution from '@/components/Solution'
 import TwoOutcomes from '@/components/TwoOutcomes'
 import AgenticActionLayer from '@/components/AgenticActionLayer'
+import UnblockingInPractice from '@/components/UnblockingInPractice'
 import EnablementKits from '@/components/EnablementKits'
 import SellerCoachSection from '@/components/SellerCoachSection'
 import KitAnatomy from '@/components/KitAnatomy'
@@ -35,6 +36,7 @@ export default function Home() {
         <Solution />
         <TwoOutcomes />
         <AgenticActionLayer />
+        <UnblockingInPractice />
         <EnablementKits />
         <SellerCoachSection />
         <KitAnatomy />

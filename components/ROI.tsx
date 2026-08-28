@@ -13,8 +13,8 @@ export default function ROI() {
             recruiting, ramp time, lost productivity, and missed revenue.
           </p>
           <p>
-            SellerEXP also improves the ROI of your existing enablement investment. Most companies already have
-            playbooks, templates, battlecards, LMS content, and training materials. The issue is not always content
+            SellerUnblocked also improves the ROI of your existing enablement investment. Most companies already have
+            playbooks, templates, checklists, and training materials. The issue is not always content
             creation — it is matching the right resource to the right seller at the right moment.
           </p>
           <p className="font-medium text-ink">

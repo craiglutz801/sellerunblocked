@@ -200,7 +200,7 @@ export function buildEnablementKit(row: SurveyResponse): EnablementKit {
 
   const managerPrompt =
     focusAreas[0].gap > 8
-      ? `Optional 1-line for your manager: “I'm working through the ${focusAreas[0].label.toLowerCase()} modules in my SellerEXP kit — would value a 15-min ride-along on my next ${focusAreas[0].key === 'support' ? 'enterprise' : 'late-stage'} opp.”`
+      ? `Optional 1-line for your manager: “I'm working through the ${focusAreas[0].label.toLowerCase()} modules in my SellerUnblocked kit — would value a 15-min ride-along on my next ${focusAreas[0].key === 'support' ? 'enterprise' : 'late-stage'} opp.”`
       : undefined
 
   return {

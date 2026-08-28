@@ -7,6 +7,7 @@ const LEADERSHIP_SEES = [
   'Theme prevalence',
   'Benchmark gaps',
   'System-level recommendations',
+  'Aggregated operational findings',
   'Minimum cohort-size reporting',
 ]
 
@@ -15,6 +16,7 @@ const LEADERSHIP_NOT = [
   'Private kit contents by seller',
   'Personal progress as a manager scorecard',
   'Verbatim quotes tied to names',
+  'Named call recordings or calendar detail',
   'Rep-by-rep coaching assignments',
 ]
 
@@ -35,7 +37,8 @@ export default function PrivacyTrust() {
           Private for Sellers. Aggregated for Leadership.
         </h2>
         <p className="mt-6 text-lg text-warm-600 text-center max-w-2xl mx-auto">
-          SellerEXP is designed to help sellers without turning feedback into individual surveillance.
+          Seller Unblocked is designed to help sellers without turning feedback — or operational systems — into
+          individual surveillance. Analyze metadata first. Use content only with explicit permission.
         </p>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-8">
@@ -80,9 +83,10 @@ export default function PrivacyTrust() {
         <div className="mt-10 max-w-3xl mx-auto rounded-2xl border border-warm-400/25 bg-cream/40 p-8">
           <h3 className="text-lg font-semibold text-ink text-center">AI remains inside the trust model.</h3>
           <p className="mt-4 text-sm text-warm-600 text-center leading-relaxed">
-            SellerEXP&apos;s AI layer uses approved company knowledge and the seller&apos;s own private context to
-            provide support. It does not expose individual feedback to leadership, create rep rankings, or make
-            employment decisions.
+            Seller Unblocked&apos;s AI layer uses approved company knowledge, permitted system metadata, and the
+            seller&apos;s own private context to provide support. Call content and calendar detail stay off unless the
+            workspace explicitly grants them. It does not expose individual feedback to leadership, create rep rankings,
+            or make employment decisions.
           </p>
           <ul className="mt-6 flex flex-wrap justify-center gap-2">
             {AI_GOVERNANCE_CHIPS.map((chip) => (

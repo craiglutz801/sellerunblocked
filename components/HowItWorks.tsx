@@ -14,9 +14,9 @@ export default function HowItWorks() {
           <div className="rounded-2xl border border-warm-400/25 bg-cream/50 px-8 py-6 text-center max-w-lg">
             <p className="text-xs font-semibold uppercase tracking-wider text-warm-500">The loop</p>
             <p className="mt-3 text-sm text-warm-600 leading-relaxed">
-              Gather → Diagnose →{' '}
+              Gather (insight + systems) → Diagnose →{' '}
               <span className="text-ink font-medium">AI-guided action for leaders</span> +{' '}
-              <span className="text-accent-dark font-medium">private support for sellers</span> → Measure improvement
+              <span className="text-accent-dark font-medium">private support for sellers</span> → Measure
             </p>
           </div>
         </div>

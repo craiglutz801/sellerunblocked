@@ -1,19 +1,19 @@
 # Install:
-#   sudo cp deploy/sellerexp.service /etc/systemd/system/sellerexp.service
+#   sudo cp deploy/sellerunblocked.service /etc/systemd/system/sellerunblocked.service
 #   sudo systemctl daemon-reload
-#   sudo systemctl enable --now sellerexp
+#   sudo systemctl enable --now sellerunblocked
 #
-# Edit WorkingDirectory and ExecStart paths if your project is not under /home/ubuntu/SellerEXP.
+# Edit WorkingDirectory and ExecStart paths if your project is not under /home/ubuntu/SellerUnblocked.
 # ExecStart must use the same Node binary you use for `npm run build` (which node).
 
 [Unit]
-Description=SellerEXP Next.js
+Description=SellerUnblocked Next.js
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/SellerEXP
+WorkingDirectory=/home/ubuntu/SellerUnblocked
 Environment=NODE_ENV=production
 Environment=PORT=3001
 ExecStart=/usr/bin/npm run start

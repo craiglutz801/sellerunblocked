@@ -5,6 +5,7 @@ const BULLETS = [
   'Diagnose the operational barriers slowing down sellers',
   'Prioritize system-level fixes with leadership intelligence',
   'Deliver private, personalized enablement kits to every seller',
+  'Triangulate CRM, calls, calendar, and content — then ask sellers only what systems cannot answer',
 ]
 
 export default function Hero() {
@@ -15,17 +16,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-light mb-5">
-              The Revenue Intelligence Layer for the Seller Experience
+              AI-Powered Seller Optimization Platform
             </p>
             <h1 className="text-display font-bold text-white tracking-tight [text-wrap:balance]">
               Find the Friction. Fix the System. Help Every Seller Win.
             </h1>
             <p className="mt-5 text-lg sm:text-xl text-accent-light/95 font-medium max-w-xl mx-auto lg:mx-0 leading-snug">
-              Turn seller feedback into leadership intelligence and personal enablement.
+              Maximize seller effectiveness by removing friction.
             </p>
             <p className="mt-6 text-lg sm:text-xl text-warm-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health,
-              revealing operational friction, and turning seller feedback into personalized enablement kits for every rep.
+              Seller Unblocked finds what prevents sellers from selling, fixes what it can, and shows leadership what
+              needs to change. Leadership still gets org intelligence. Every seller still gets a private enablement kit.
             </p>
             <ul className="mt-10 grid gap-3 max-w-lg mx-auto lg:mx-0">
               {BULLETS.map((text) => (

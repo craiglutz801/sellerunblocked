@@ -6,7 +6,7 @@ export default function HeroDualMock({ className = '' }: { className?: string })
       <div className="relative rounded-2xl border border-white/10 bg-ink-light/90 backdrop-blur-sm p-5 sm:p-6 shadow-2xl">
         <div className="flex justify-center mb-5">
           <div className="rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 text-xs font-semibold text-accent-light">
-            SellerEXP Diagnostic Spine
+            SellerUnblocked Diagnostic Spine
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
@@ -34,7 +34,7 @@ export default function HeroDualMock({ className = '' }: { className?: string })
             <p className="mt-1 text-[0.625rem] text-warm-400">Private to you</p>
             <p className="mt-3 text-xs font-semibold text-white">Focus: Pricing Confidence</p>
             <ul className="mt-3 space-y-1.5">
-              {['CFO ROI Template', 'Negotiation Drill', 'Deal Desk Playbook'].map((m) => (
+              {['Pricing Exception Packet', 'Handoff Checklist', 'Customer-Reference Brief'].map((m) => (
                 <li key={m} className="flex items-center gap-2 text-[0.6875rem] text-warm-400">
                   <span className="h-1 w-1 rounded-full bg-accent shrink-0" />
                   {m}

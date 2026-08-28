@@ -11,6 +11,7 @@ const TYPE_COLORS: Record<string, string> = {
   Playbook: 'bg-sky-100 text-sky-800',
   Template: 'bg-emerald-100 text-emerald-800',
   Drill: 'bg-violet-100 text-violet-800',
+  Checklist: 'bg-amber-100 text-amber-900',
 }
 
 export default function EnablementKits() {
@@ -34,7 +35,7 @@ export default function EnablementKits() {
         <div className="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="space-y-6 text-warm-400 leading-relaxed">
             <p>
-              SellerEXP extends beyond executive dashboards with a private seller center. After each measurement cycle,
+              SellerUnblocked extends beyond executive dashboards with a private seller center. After each measurement cycle,
               reps receive a tailored enablement kit based on their scores, stage confidence, open-text feedback, and
               role context.
             </p>

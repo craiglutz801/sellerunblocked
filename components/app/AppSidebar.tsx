@@ -47,7 +47,7 @@ export default function AppSidebar({ portal, portalHomeHref, mobileOpen, onClose
             </svg>
           </span>
           <Link href={portalHomeHref} className="text-[1.05rem] font-semibold tracking-tight text-ink" onClick={onClose}>
-            SellerEXP
+            SellerUnblocked
           </Link>
         </div>
         {portal === 'rep' ? (

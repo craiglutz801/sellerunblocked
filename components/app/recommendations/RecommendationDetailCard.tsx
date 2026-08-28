@@ -1,4 +1,5 @@
 import type { Recommendation } from '@/lib/types/platform'
+import EvidenceSourceChips from '@/components/app/EvidenceSourceChips'
 
 const priorityStyles: Record<Recommendation['priority'], string> = {
   P0: 'bg-rose-500/10 text-rose-800 border-rose-500/20',
@@ -38,7 +39,24 @@ export default function RecommendationDetailCard({ rec }: { rec: Recommendation 
           <div className="rounded-xl border border-warm-400/30 bg-cream/30 p-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-warm-500">Linked evidence</h3>
             <p className="mt-2 text-sm text-ink leading-relaxed">{rec.evidenceSummary}</p>
+            {rec.evidenceSources?.length ? (
+              <div className="mt-4">
+                <EvidenceSourceChips sources={rec.evidenceSources} showDetail />
+              </div>
+            ) : null}
           </div>
+          {rec.targetedQuestion ? (
+            <div className="rounded-xl border border-accent/30 bg-accent/10 p-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-accent-dark">
+                Targeted question
+              </h3>
+              <p className="mt-2 text-sm font-medium text-ink leading-relaxed">“{rec.targetedQuestion}”</p>
+              <p className="mt-2 text-xs text-warm-500">
+                Asked of the affected cohort only because system evidence could not settle the cause. Answers stay
+                aggregated.
+              </p>
+            </div>
+          ) : null}
         </div>
         <div className="space-y-4">
           <div className="rounded-xl border border-warm-400/30 bg-paper p-4">

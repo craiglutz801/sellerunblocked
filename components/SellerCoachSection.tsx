@@ -5,9 +5,9 @@ import { MessageSquare, Search, Target, Zap } from 'lucide-react'
 const USE_CASE_ICONS = [Target, Search, MessageSquare, Zap]
 
 const RESOURCE_CHIPS = [
-  'CFO ROI template · 15 min',
-  'Pricing framework · 10 min',
-  'Objection practice · 8 min',
+  'Pricing exception packet · 15 min',
+  'Customer-reference brief · 10 min',
+  'Handoff checklist · 8 min',
 ]
 
 export default function SellerCoachSection() {
@@ -21,7 +21,7 @@ export default function SellerCoachSection() {
           A Seller Coach That Helps With the Work in Front of You.
         </h2>
         <p className="mt-6 text-lg text-warm-400 text-center max-w-2xl mx-auto leading-relaxed">
-          A kit should not feel like a list of assignments. SellerEXP can give each rep a private AI guide that
+          A kit should not feel like a list of assignments. SellerUnblocked can give each rep a private AI guide that
           understands their focus areas, role context, approved company resources, and the sales moments where they need
           confidence most.
         </p>
@@ -64,7 +64,7 @@ function SellerCoachMockup() {
     <div
       className="rounded-2xl border border-white/10 bg-ink-light/90 shadow-2xl ring-1 ring-violet-500/20 overflow-hidden"
       role="img"
-      aria-label="Illustrative private seller coach conversation helping prepare for a CFO call."
+      aria-label="Illustrative private seller coach conversation helping prepare for an executive buyer conversation."
     >
       <div className="border-b border-white/10 bg-white/5 px-5 py-4">
         <p className="text-sm font-semibold text-white">Your private seller coach</p>
@@ -74,7 +74,7 @@ function SellerCoachMockup() {
         <div className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 ml-4">
           <p className="text-xs text-warm-500 mb-1">You</p>
           <p className="text-sm text-white/90 leading-relaxed">
-            I have a CFO call tomorrow. I need to make our ROI story sharper and I expect pricing pushback.
+            I have an executive buyer call tomorrow. I need a sharper commercial story and I expect pricing pushback.
           </p>
         </div>
         <div className="rounded-xl bg-violet-500/10 border border-violet-400/20 px-4 py-3 mr-2">
@@ -83,7 +83,7 @@ function SellerCoachMockup() {
             You flagged pricing confidence as a focus area. Here is a 12-minute prep plan for tomorrow:
           </p>
           <ol className="mt-3 space-y-1.5 text-sm text-warm-300 list-decimal list-inside">
-            <li>Use the CFO ROI framework</li>
+            <li>Use the customer-reference brief</li>
             <li>Lead with these three discovery questions</li>
             <li>Practice the pricing objection drill</li>
             <li>Bring in deal desk early if commercial terms change</li>

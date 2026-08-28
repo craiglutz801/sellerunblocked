@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SellerEXP — start Next.js dev server (works when Node isn’t on your global PATH).
+# SellerUnblocked — start Next.js dev server (works when Node isn’t on your global PATH).
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
