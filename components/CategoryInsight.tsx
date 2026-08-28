@@ -60,7 +60,7 @@ export default function CategoryInsight() {
           </div>
           <div className="rounded-2xl bg-ink text-white p-8 md:p-9 border border-ink-light">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-accent-light mb-6">
-              Actions SellerEXP activates
+              Actions SellerUnblocked activates
             </h3>
             <ul className="space-y-3">
               {ACTIVATES.map((item) => (

@@ -1,8 +1,8 @@
-# SellerEXP Website — Additive Agentic Enhancement Spec
+# SellerUnblocked Website — Additive Agentic Enhancement Spec
 
 ## Purpose
 
-Evolve the current SellerEXP marketing website to make the AI / agentic capability unmistakable **without disturbing the core story, visual system, or header that already works.**
+Evolve the current SellerUnblocked marketing website to make the AI / agentic capability unmistakable **without disturbing the core story, visual system, or header that already works.**
 
 This is an additive enhancement — not a redesign.
 
@@ -12,7 +12,7 @@ The current product narrative is strong:
 
 The new layer should make one additional promise:
 
-> **SellerEXP does not just surface the signal. It helps leaders and sellers act on it.**
+> **SellerUnblocked does not just surface the signal. It helps leaders and sellers act on it.**
 
 Use AI and agents as the action layer beneath the existing "diagnostic spine" concept. Do not make the site sound like a generic AI chatbot, an autonomous sales-rep replacement, or a performance surveillance system.
 
@@ -32,7 +32,7 @@ Use AI and agents as the action layer beneath the existing "diagnostic spine" co
    - AI should make the existing promise more credible, not become the entire story.
 
 3. **Preserve the central positioning.**
-   - SellerEXP is still a **Revenue Organization Intelligence** platform.
+   - SellerUnblocked is still a **Revenue Organization Intelligence** platform.
    - The platform is still centered on seller feedback, diagnostics, leadership intelligence, and private enablement kits.
    - The agentic layer is what converts insight into useful action.
 
@@ -42,7 +42,7 @@ Use AI and agents as the action layer beneath the existing "diagnostic spine" co
 
 5. **Use the current design system.**
    - Reuse existing typography, dark navy surfaces, bright blue CTA treatment, cyan/teal accents, rounded card shapes, shadows, grid spacing, and animation language.
-   - New UI should look like it was always part of SellerEXP.
+   - New UI should look like it was always part of SellerUnblocked.
 
 ---
 
@@ -59,7 +59,7 @@ Seller feedback → diagnostic spine → leadership intelligence + personalized 
 ```text
 Seller feedback + approved company knowledge
         ↓
-SellerEXP diagnostic spine
+SellerUnblocked diagnostic spine
         ↓
 AI action layer
         ↓
@@ -73,7 +73,7 @@ Measure what improves
 
 Use this sparingly across the page:
 
-> **SellerEXP combines revenue-organization intelligence with an AI action layer — helping leaders turn friction into operational priorities and giving sellers private guidance they can use in the next deal.**
+> **SellerUnblocked combines revenue-organization intelligence with an AI action layer — helping leaders turn friction into operational priorities and giving sellers private guidance they can use in the next deal.**
 
 Supporting alternatives:
 
@@ -222,7 +222,7 @@ Intelligence Is Useful. Action Is What Changes the Revenue System.
 ## Supporting copy
 
 ```text
-SellerEXP uses an AI action layer to connect what sellers are experiencing with the next best move for the people who can act on it. Leaders get clearer priorities. Sellers get private, practical guidance for the work in front of them.
+SellerUnblocked uses an AI action layer to connect what sellers are experiencing with the next best move for the people who can act on it. Leaders get clearer priorities. Sellers get private, practical guidance for the work in front of them.
 ```
 
 ## Visual concept
@@ -230,7 +230,7 @@ SellerEXP uses an AI action layer to connect what sellers are experiencing with 
 Build a horizontally connected 3-stage system with the same card styling used elsewhere on the page.
 
 ```text
-[ Seller signals ]  →  [ SellerEXP intelligence ]  →  [ AI action layer ]
+[ Seller signals ]  →  [ SellerUnblocked intelligence ]  →  [ AI action layer ]
                                                           ↙           ↘
                                               [ Leadership action ]  [ Seller help ]
 ```
@@ -247,7 +247,7 @@ Feedback, stage confidence, open-text context, and role-specific friction.
 
 **Visual:** simple survey / pulse / signal icon.
 
-### Card 2: SellerEXP intelligence
+### Card 2: SellerUnblocked intelligence
 
 **Label:** `Diagnostic spine`
 
@@ -373,7 +373,7 @@ A Seller Coach That Helps With the Work in Front of You.
 ## Supporting copy
 
 ```text
-A kit should not feel like a list of assignments. SellerEXP can give each rep a private AI guide that understands their focus areas, role context, approved company resources, and the sales moments where they need confidence most.
+A kit should not feel like a list of assignments. SellerUnblocked can give each rep a private AI guide that understands their focus areas, role context, approved company resources, and the sales moments where they need confidence most.
 ```
 
 ## Design layout
@@ -506,7 +506,7 @@ Each IC receives a private enablement kit based on their own feedback, scores, s
 Replace body with:
 
 ```text
-Leaders address systemic friction while sellers use targeted support. SellerEXP tracks whether action is improving experience, confidence, and execution over time.
+Leaders address systemic friction while sellers use targeted support. SellerUnblocked tracks whether action is improving experience, confidence, and execution over time.
 ```
 
 ---
@@ -524,7 +524,7 @@ AI remains inside the trust model.
 ### Body
 
 ```text
-SellerEXP’s AI layer uses approved company knowledge and the seller’s own private context to provide support. It does not expose individual feedback to leadership, create rep rankings, or make employment decisions.
+SellerUnblocked’s AI layer uses approved company knowledge and the seller’s own private context to provide support. It does not expose individual feedback to leadership, create rep rankings, or make employment decisions.
 ```
 
 ### Small guardrail chips
@@ -577,7 +577,7 @@ AI-guided support makes existing enablement assets easier to find, easier to app
 ### Response
 
 ```text
-No. Generic copilots begin with a prompt. SellerEXP begins with a diagnostic of the seller environment — then uses that context to guide leadership action and provide private support that is relevant to the seller’s real friction.
+No. Generic copilots begin with a prompt. SellerUnblocked begins with a diagnostic of the seller environment — then uses that context to guide leadership action and provide private support that is relevant to the seller’s real friction.
 ```
 
 ---
@@ -589,7 +589,7 @@ Keep the existing final CTA structure and headline.
 ## Update the body copy
 
 ```text
-Book a 20-minute overview to see how SellerEXP reveals hidden friction, prioritizes system-level improvements, and gives leaders and sellers AI-guided help to act on what matters next.
+Book a 20-minute overview to see how SellerUnblocked reveals hidden friction, prioritizes system-level improvements, and gives leaders and sellers AI-guided help to act on what matters next.
 ```
 
 ## Keep CTA labels
@@ -767,7 +767,7 @@ export const sellerCoachUseCases = [
 The update is successful only if all of the following are true:
 
 - The header and hero still feel essentially unchanged.
-- A first-time visitor still understands SellerEXP before encountering agent language.
+- A first-time visitor still understands SellerUnblocked before encountering agent language.
 - The page clearly shows that AI helps both leadership and sellers act.
 - The agentic story is contextual and specific, not generic AI marketing.
 - Seller privacy is clearer, not muddier.
@@ -777,7 +777,7 @@ The update is successful only if all of the following are true:
 - The core summary remains easy to say out loud:
 
 ```text
-SellerEXP finds the friction, helps leadership fix the system, and gives every seller private, AI-guided support to win inside it.
+SellerUnblocked finds the friction, helps leadership fix the system, and gives every seller private, AI-guided support to win inside it.
 ```
 
 ---

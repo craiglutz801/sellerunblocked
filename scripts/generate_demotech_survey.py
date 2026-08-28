@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate DemoTech SellerEXP survey Word doc and 500-response CSV."""
+"""Generate DemoTech SellerUnblocked survey Word doc and 500-response CSV."""
 
 import csv
 import random
@@ -205,7 +205,7 @@ def build_word_doc() -> Path:
     sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     meta = doc.add_paragraph()
-    meta.add_run(f"Survey instrument · SellerEXP · Cycle Q2 {date.today().year}").italic = True
+    meta.add_run(f"Survey instrument · SellerUnblocked · Cycle Q2 {date.today().year}").italic = True
     meta.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     doc.add_paragraph()

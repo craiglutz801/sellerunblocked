@@ -38,7 +38,7 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     title: 'Diagnose the Organization',
-    body: 'SellerEXP identifies patterns, friction points, operating gaps, and areas of misalignment across roles, segments, and teams.',
+    body: 'SellerUnblocked identifies patterns, friction points, operating gaps, and areas of misalignment across roles, segments, and teams.',
   },
   {
     title: 'Deliver Leadership Intelligence',
@@ -50,7 +50,7 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     title: 'Improve and Track Progress',
-    body: 'Leaders address systemic friction while sellers use targeted support. SellerEXP tracks whether action is improving experience, confidence, and execution over time.',
+    body: 'Leaders address systemic friction while sellers use targeted support. SellerUnblocked tracks whether action is improving experience, confidence, and execution over time.',
   },
 ]
 
@@ -114,17 +114,17 @@ export const ROLE_CARDS = [
 export const OBJECTIONS = [
   {
     quote: 'We already track performance metrics.',
-    response: 'Performance metrics show outcomes. SellerEXP shows the operating conditions causing them.',
+    response: 'Performance metrics show outcomes. SellerUnblocked shows the operating conditions causing them.',
   },
   {
     quote: 'We already collect feedback.',
     response:
-      'Most feedback programs are episodic, fragmented, and hard to act on. SellerEXP turns seller insight into continuous operational intelligence.',
+      'Most feedback programs are episodic, fragmented, and hard to act on. SellerUnblocked turns seller insight into continuous operational intelligence.',
   },
   {
     quote: 'This sounds like an HR or survey tool.',
     response:
-      'SellerEXP is designed for CROs and revenue leaders. It measures the revenue organization, not employee engagement.',
+      'SellerUnblocked is designed for CROs and revenue leaders. It measures the revenue organization, not employee engagement.',
   },
   {
     quote: 'We already know our biggest issues.',
@@ -134,12 +134,12 @@ export const OBJECTIONS = [
   {
     quote: 'We already have enablement content.',
     response:
-      'SellerEXP does not replace your content library. It makes it more useful by matching the right resource to the right seller based on actual friction signals.',
+      'SellerUnblocked does not replace your content library. It makes it more useful by matching the right resource to the right seller based on actual friction signals.',
   },
   {
     quote: 'Will sellers trust this?',
     response:
-      'SellerEXP separates leadership visibility from rep-owned personalization. Leadership sees patterns. Sellers receive private help.',
+      'SellerUnblocked separates leadership visibility from rep-owned personalization. Leadership sees patterns. Sellers receive private help.',
   },
   {
     quote: 'Is this a performance management tool?',
@@ -154,7 +154,7 @@ export const OBJECTIONS = [
   {
     quote: 'Is this just another AI copilot?',
     response:
-      'No. Generic copilots begin with a prompt. SellerEXP begins with a diagnostic of the seller environment — then uses that context to guide leadership action and provide private support that is relevant to the seller’s real friction.',
+      'No. Generic copilots begin with a prompt. SellerUnblocked begins with a diagnostic of the seller environment — then uses that context to guide leadership action and provide private support that is relevant to the seller’s real friction.',
   },
 ]
 

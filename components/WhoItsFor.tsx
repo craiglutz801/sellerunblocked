@@ -8,7 +8,7 @@ export default function WhoItsFor() {
           Built for Complex Revenue Organizations
         </h2>
         <p className="mt-10 text-warm-600 text-lg max-w-xl mx-auto text-center leading-relaxed">
-          SellerEXP is designed for companies where operational complexity creates distance between leadership and the
+          SellerUnblocked is designed for companies where operational complexity creates distance between leadership and the
           day-to-day reality of sellers.
         </p>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

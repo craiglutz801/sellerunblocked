@@ -64,7 +64,7 @@ export default function BrokenFeedbackLoop() {
         </p>
         <p className="mt-4 text-warm-600 text-center max-w-2xl mx-auto leading-relaxed">
           Most revenue organizations have two disconnected systems: feedback that tells leadership what sellers
-          experience, and enablement that sends broad training to the field. SellerEXP connects them.
+          experience, and enablement that sends broad training to the field. SellerUnblocked connects them.
         </p>
         <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-12">
           <LoopColumn
@@ -82,7 +82,7 @@ export default function BrokenFeedbackLoop() {
             variant="after"
             steps={[
               'Seller feedback',
-              'SellerEXP diagnostic spine',
+              'SellerUnblocked diagnostic spine',
               'Leadership intelligence + personalized seller kit',
               'System fixes + seller action',
             ]}
