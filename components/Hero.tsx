@@ -24,7 +24,7 @@ export default function Hero() {
               Turn seller feedback into leadership intelligence and personal enablement.
             </p>
             <p className="mt-6 text-lg sm:text-xl text-warm-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health,
+              SellerUnblocked gives revenue leaders a continuous intelligence system for measuring sales org health,
               revealing operational friction, and turning seller feedback into personalized enablement kits for every rep.
             </p>
             <ul className="mt-10 grid gap-3 max-w-lg mx-auto lg:mx-0">

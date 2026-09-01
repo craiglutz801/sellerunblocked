@@ -1,21 +1,21 @@
-# SellerEXP Product Blueprint
+# SellerUnblocked Product Blueprint
 **Version:** v1  
 **Purpose:** A build-ready product/framework spec for Cursor  
-**Product direction:** Position SellerEXP as a premium **Revenue Organization Intelligence** platform, not a survey tool. Ground the product in seller experience, but elevate the narrative to diagnosing and improving the operating environment for revenue teams. fileciteturn0file0L1-L20 fileciteturn0file1L1-L18
+**Product direction:** Position SellerUnblocked as a premium **Revenue Organization Intelligence** platform, not a survey tool. Ground the product in seller experience, but elevate the narrative to diagnosing and improving the operating environment for revenue teams. fileciteturn0file0L1-L20 fileciteturn0file1L1-L18
 
 ---
 
 ## 1) Strategic Positioning
 
 ### Core category
-SellerEXP should be built and presented as one of these category positions:
+SellerUnblocked should be built and presented as one of these category positions:
 
 1. **Revenue Organization Intelligence**
 2. **Sales Org Diagnostics**
 3. **Revenue Team Operating System** *(internal product language, not necessarily homepage language)*
 
 ### Recommended market-facing positioning
-**SellerEXP is a Revenue Organization Intelligence platform that helps leadership understand whether their sales organization is structurally designed to succeed.** It measures the operational environment of sellers, identifies friction, benchmarks performance, and recommends improvements. fileciteturn0file0L1-L20 fileciteturn0file1L19-L48
+**SellerUnblocked is a Revenue Organization Intelligence platform that helps leadership understand whether their sales organization is structurally designed to succeed.** It measures the operational environment of sellers, identifies friction, benchmarks performance, and recommends improvements. fileciteturn0file0L1-L20 fileciteturn0file1L19-L48
 
 ### Messaging guardrails
 Do **not** position the product as:
@@ -50,7 +50,7 @@ Very few measure the environment producing those outcomes:
 - compensation clarity
 - sales-stage confidence
 
-SellerEXP exists to make that operating environment visible, measurable, and improvable. fileciteturn0file0L7-L20 fileciteturn0file0L21-L69
+SellerUnblocked exists to make that operating environment visible, measurable, and improvable. fileciteturn0file0L7-L20 fileciteturn0file0L21-L69
 
 ### Product promise
 **Reveal where the revenue organization is creating drag, quantify the impact, and guide leadership toward the highest-leverage fixes.**
@@ -760,7 +760,7 @@ Measure the seller experience, diagnose operational friction, and improve the en
 Paste this section into Cursor as the implementation brief.
 
 ### Build brief
-Build SellerEXP as a premium multi-page web application using the design language from the existing marketing landing page as the single source of truth for colors, spacing, typography, surfaces, and motion.
+Build SellerUnblocked as a premium multi-page web application using the design language from the existing marketing landing page as the single source of truth for colors, spacing, typography, surfaces, and motion.
 
 Position the application as a **Revenue Organization Intelligence** platform, not a survey dashboard.
 
@@ -832,7 +832,7 @@ Because the landing page itself was not included here, this blueprint assumes it
 
 ## 22) Final Recommendation
 
-The winning version of SellerEXP is not “a better survey dashboard.”
+The winning version of SellerUnblocked is not “a better survey dashboard.”
 
 It is a visually premium, strategically positioned **Revenue Organization Intelligence** platform that gives sales leadership a clear answer to one essential question:
 

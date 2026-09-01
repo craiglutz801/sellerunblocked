@@ -10,7 +10,7 @@ export default function Benchmarking() {
             Most organizations can collect feedback. Very few can turn it into strategic intelligence.
           </p>
           <p>
-            SellerEXP helps leadership understand where friction is rising, what trends are improving or deteriorating,
+            SellerUnblocked helps leadership understand where friction is rising, what trends are improving or deteriorating,
             how their organization compares against peers, and which operational issues deserve action first.
           </p>
           <p>

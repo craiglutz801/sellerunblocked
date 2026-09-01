@@ -26,7 +26,7 @@ export default function CostOfFriction() {
           <p>
             And while leadership works on systemic fixes, sellers still need help today. A delayed deal desk SLA,
             confusing handoff process, weak ROI story, or unclear stage expectation can affect the next opportunity on
-            their calendar. SellerEXP helps the organization improve while giving sellers practical support immediately.
+            their calendar. SellerUnblocked helps the organization improve while giving sellers practical support immediately.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">

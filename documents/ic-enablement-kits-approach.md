@@ -1,6 +1,6 @@
 # IC Enablement Kits — Personalized Learning from Seller Feedback
 
-> **Product concept:** SellerEXP extends beyond executive intelligence with a **private seller center** that turns each IC’s survey responses into a tailored enablement and learning kit — empathetic in tone, direct in action, and curated with AI.
+> **Product concept:** SellerUnblocked extends beyond executive intelligence with a **private seller center** that turns each IC’s survey responses into a tailored enablement and learning kit — empathetic in tone, direct in action, and curated with AI.
 
 ---
 
@@ -8,7 +8,7 @@
 
 Most revenue organizations can **collect** seller feedback. Few can **close the loop** in a way that helps the individual rep who raised it.
 
-Today, SellerEXP gives leadership a clear picture of org health — where friction lives, what changed, what to fix. That’s essential. But ICs often experience the survey as a one-way vent: leadership hears the themes; the rep who struggled doesn’t get targeted help.
+Today, SellerUnblocked gives leadership a clear picture of org health — where friction lives, what changed, what to fix. That’s essential. But ICs often experience the survey as a one-way vent: leadership hears the themes; the rep who struggled doesn’t get targeted help.
 
 The new approach adds a **second surface**: a private enablement portal where each rep receives a kit built from *their* scores, stage confidence, and open-text feedback — not a generic training assignment, and not a performance review.
 
@@ -238,7 +238,7 @@ Leadership simultaneously sees: *Support pillar lowest org-wide; 22% of open tex
 
 ---
 
-## Current implementation status (SellerEXP demo)
+## Current implementation status (SellerUnblocked demo)
 
 - **Data:** 500 DemoTech survey responses wired into aggregates and kit engine
 - **Leadership portal:** `/app/*` — unchanged purpose, DemoTech-backed metrics
@@ -252,6 +252,6 @@ Leadership simultaneously sees: *Support pillar lowest org-wide; 22% of open tex
 
 ## Related documents
 
-- `SellerEXP_Product_Blueprint (1).md` — Core product pillars and data model
+- `SellerUnblocked_Product_Blueprint (1).md` — Core product pillars and data model
 - `documents/demotech-survey/` — Survey instrument and sample response dataset
 - Rep portal routes: `/rep/home`, `/rep/kit`, `/rep/snapshot`, `/rep/learn`, `/rep/resources`

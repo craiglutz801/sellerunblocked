@@ -1,11 +1,11 @@
-# SellerEXP — Landing Page Design & Content Document
+# SellerUnblocked — Landing Page Design & Content Document
 ## Cursor-Ready Spec for a High-Conversion Website
 
 ## 1. Strategic Recommendation
 
-The strongest version of this landing page should **not** position SellerEXP as a survey tool.
+The strongest version of this landing page should **not** position SellerUnblocked as a survey tool.
 
-It should position SellerEXP as a new category:
+It should position SellerUnblocked as a new category:
 
 # **Revenue Organization Intelligence**
 ### with seller experience as the input layer
@@ -30,7 +30,7 @@ This framing is stronger because it:
 - **The system for measuring whether your sales organization is actually set up to win**
 
 ## Best positioning statement
-**SellerEXP helps revenue leaders measure the health of their sales organization by revealing the operational friction, misalignment, and support gaps that slow sellers down.**
+**SellerUnblocked helps revenue leaders measure the health of their sales organization by revealing the operational friction, misalignment, and support gaps that slow sellers down.**
 
 ---
 
@@ -43,7 +43,7 @@ The landing page should do one primary job:
 Secondarily, it should:
 - make the category feel obvious and urgent
 - explain why current revenue metrics are insufficient
-- establish SellerEXP as the first credible solution
+- establish SellerUnblocked as the first credible solution
 - reframe seller feedback as strategic revenue intelligence
 - make the product feel premium, modern, and category-defining
 
@@ -91,7 +91,7 @@ The page should follow this sequence:
    Friction lowers productivity, slows deals, increases turnover, and hurts revenue.
 
 4. **Introduce the category**  
-   SellerEXP is a Revenue Organization Intelligence platform.
+   SellerUnblocked is a Revenue Organization Intelligence platform.
 
 5. **Explain how it works**  
    Structured seller insight → diagnostics → analytics → AI recommendations.
@@ -160,7 +160,7 @@ Immediately communicate the category, the problem, and the outcome.
 # **Know Whether Your Sales Organization Is Actually Set Up to Win**
 
 ## Recommended subheadline
-**SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.**
+**SellerUnblocked gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.**
 
 ## Hero credibility bullets
 - Identify the operational barriers slowing down sellers
@@ -250,7 +250,7 @@ It shows up as wasted selling time, slower deal cycles, lower quota attainment, 
 
 Most organizations discover these problems too late—after productivity slips, top performers disengage, pipeline quality weakens, or revenue targets are missed.
 
-SellerEXP helps leadership see those issues earlier, diagnose them faster, and act with confidence.
+SellerUnblocked helps leadership see those issues earlier, diagnose them faster, and act with confidence.
 
 ## Suggested stat-style tiles
 - Less selling time
@@ -265,16 +265,16 @@ Use a darker background section here for emotional contrast.
 
 ---
 
-# Section 5 — The SellerEXP Solution
+# Section 5 — The SellerUnblocked Solution
 
 ## Goal
 Introduce the product as a category-defining system.
 
 ## Headline
-# **SellerEXP Is a Revenue Organization Intelligence Platform**
+# **SellerUnblocked Is a Revenue Organization Intelligence Platform**
 
 ## Body copy
-SellerEXP helps leadership understand whether the sales organization is truly set up to win.
+SellerUnblocked helps leadership understand whether the sales organization is truly set up to win.
 
 The platform combines:
 - structured seller insight
@@ -310,7 +310,7 @@ Show a simple intelligence loop.
 Structured programs collect quantitative and qualitative feedback from sellers about the systems, processes, and support structures that affect performance.
 
 ## Step 2 — Diagnose the Organization
-SellerEXP identifies patterns, friction points, operational gaps, and areas of misalignment across the revenue organization.
+SellerUnblocked identifies patterns, friction points, operational gaps, and areas of misalignment across the revenue organization.
 
 ## Step 3 — Deliver Leadership Intelligence
 Executives receive dashboards, summaries, benchmark views, and AI-guided insight into what is helping—or preventing—sellers from winning.
@@ -323,7 +323,7 @@ Use a horizontal 4-step section on desktop and stacked cards on mobile.
 
 ---
 
-# Section 7 — What SellerEXP Measures
+# Section 7 — What SellerUnblocked Measures
 
 ## Goal
 Make the platform feel real and broad enough to justify strategic budget.
@@ -332,7 +332,7 @@ Make the platform feel real and broad enough to justify strategic budget.
 # **The Key Drivers of Seller Performance**
 
 ## Intro copy
-SellerEXP evaluates the operational dimensions that have the biggest impact on whether sellers can perform at a high level.
+SellerUnblocked evaluates the operational dimensions that have the biggest impact on whether sellers can perform at a high level.
 
 ## Measurement categories
 - Sales process effectiveness
@@ -358,7 +358,7 @@ How well the sales process helps sellers move deals forward.
 
 ---
 
-# Section 8 — Why Leaders Use SellerEXP
+# Section 8 — Why Leaders Use SellerUnblocked
 
 ## Goal
 Translate features into business value.
@@ -367,7 +367,7 @@ Translate features into business value.
 # **A Better Way to Understand and Improve the Sales Organization**
 
 ## Value bullets
-SellerEXP helps revenue leaders:
+SellerUnblocked helps revenue leaders:
 - increase seller productivity
 - identify operational barriers earlier
 - improve rep retention
@@ -396,7 +396,7 @@ Most organizations can collect feedback.
 
 Very few can turn it into strategic intelligence.
 
-SellerEXP helps leadership understand:
+SellerUnblocked helps leadership understand:
 - where friction is rising
 - what trends are improving or deteriorating
 - how their organization compares against peers
@@ -418,7 +418,7 @@ Help the right buyer self-identify.
 # **Built for Complex Revenue Organizations**
 
 ## Body copy
-SellerEXP is designed for companies where operational complexity creates distance between leadership and the day-to-day reality of sellers.
+SellerUnblocked is designed for companies where operational complexity creates distance between leadership and the day-to-day reality of sellers.
 
 ## Ideal users
 - Chief Revenue Officers
@@ -443,7 +443,7 @@ Create economic justification.
 ## Body copy
 For many organizations, replacing a single seller can cost $75K to $250K or more when you account for recruiting, ramp time, lost productivity, and missed revenue.
 
-If SellerEXP helps prevent even one high-performing rep from leaving—or surfaces one major operational barrier affecting the broader team—the platform can often justify itself quickly.
+If SellerUnblocked helps prevent even one high-performing rep from leaving—or surfaces one major operational barrier affecting the broader team—the platform can often justify itself quickly.
 
 And the upside from improved productivity across the organization is much larger.
 
@@ -463,13 +463,13 @@ Resolve hesitation.
 ## Objection-response copy blocks
 
 ### “We already track performance metrics.”
-Performance metrics show outcomes. SellerEXP shows the operating conditions causing them.
+Performance metrics show outcomes. SellerUnblocked shows the operating conditions causing them.
 
 ### “We already collect feedback.”
-Most feedback programs are episodic, fragmented, and hard to act on. SellerEXP turns seller insight into continuous operational intelligence.
+Most feedback programs are episodic, fragmented, and hard to act on. SellerUnblocked turns seller insight into continuous operational intelligence.
 
 ### “This sounds like an HR or survey tool.”
-SellerEXP is designed for CROs and revenue leaders. It measures the revenue organization, not employee engagement.
+SellerUnblocked is designed for CROs and revenue leaders. It measures the revenue organization, not employee engagement.
 
 ### “We already know our biggest issues.”
 Most leadership teams know some issues. Few can measure them systematically, prioritize them objectively, and track improvement over time.
@@ -489,7 +489,7 @@ Companies invest heavily in understanding customers.
 
 But the next frontier of revenue intelligence is understanding the environment in which sellers operate.
 
-SellerEXP gives revenue leaders a structured system for measuring, diagnosing, and improving that environment—so sellers can perform at their best.
+SellerUnblocked gives revenue leaders a structured system for measuring, diagnosing, and improving that environment—so sellers can perform at their best.
 
 ---
 
@@ -502,7 +502,7 @@ Drive the meeting.
 # **See What’s Helping—or Preventing—Your Sellers From Winning**
 
 ## Body copy
-Book a 20-minute overview to see how SellerEXP can reveal the hidden friction inside your sales organization and turn seller insight into measurable operational improvement.
+Book a 20-minute overview to see how SellerUnblocked can reveal the hidden friction inside your sales organization and turn seller insight into measurable operational improvement.
 
 ## CTA
 **Book a 20-Minute Overview**
@@ -515,7 +515,7 @@ Book a 20-minute overview to see how SellerEXP can reveal the hidden friction in
 ## 7. Full Recommended Landing Page Copy
 
 # Header
-SellerEXP
+SellerUnblocked
 
 Nav:
 Product | How It Works | Who It’s For | ROI | About
@@ -528,7 +528,7 @@ CTA:
 # Hero
 ## Know Whether Your Sales Organization Is Actually Set Up to Win
 
-SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.
+SellerUnblocked gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.
 
 - Identify the operational barriers slowing down sellers
 - Measure the health of your revenue organization
@@ -561,14 +561,14 @@ It reduces selling time, creates frustration, slows deal progress, and weakens p
 
 Most companies discover these problems too late.
 
-SellerEXP reveals them earlier—before they become expensive.
+SellerUnblocked reveals them earlier—before they become expensive.
 
 ---
 
 # Section: Solution
-## SellerEXP Is a Revenue Organization Intelligence Platform
+## SellerUnblocked Is a Revenue Organization Intelligence Platform
 
-SellerEXP helps leadership understand whether the sales organization is truly set up to win.
+SellerUnblocked helps leadership understand whether the sales organization is truly set up to win.
 
 The platform combines structured seller insight, operational diagnostics, analytics, benchmarking, and AI-driven recommendations to give leadership a clear view of sales org health.
 
@@ -596,7 +596,7 @@ Track whether operational changes are improving the seller experience over time.
 # Section: What It Measures
 ## The Key Drivers of Seller Performance
 
-SellerEXP evaluates the operational dimensions that shape whether sellers can perform at a high level:
+SellerUnblocked evaluates the operational dimensions that shape whether sellers can perform at a high level:
 
 - Sales process effectiveness
 - Technology and tools
@@ -612,7 +612,7 @@ SellerEXP evaluates the operational dimensions that shape whether sellers can pe
 # Section: Outcomes
 ## A Better Way to Understand and Improve the Sales Organization
 
-SellerEXP helps revenue leaders:
+SellerUnblocked helps revenue leaders:
 - increase seller productivity
 - identify operational barriers faster
 - improve rep retention
@@ -631,14 +631,14 @@ Most organizations can collect feedback.
 
 Very few can turn that feedback into strategic intelligence.
 
-SellerEXP helps leaders understand where friction is rising, what matters most, and how their organization compares against peers—so they can focus on the changes that will have the greatest operational impact.
+SellerUnblocked helps leaders understand where friction is rising, what matters most, and how their organization compares against peers—so they can focus on the changes that will have the greatest operational impact.
 
 ---
 
 # Section: Audience
 ## Built for Complex Revenue Organizations
 
-SellerEXP is designed for companies with 100+ sellers where operational complexity makes it hard for leadership to see what sellers actually experience day to day.
+SellerUnblocked is designed for companies with 100+ sellers where operational complexity makes it hard for leadership to see what sellers actually experience day to day.
 
 Primary users include:
 - Chief Revenue Officers
@@ -654,7 +654,7 @@ Primary users include:
 
 Replacing a single seller can cost $75K to $250K+ when you factor in hiring costs, lost productivity, ramp time, and revenue disruption.
 
-If SellerEXP prevents even one high-performing rep from leaving—or surfaces one major barrier affecting the team—the platform can often justify itself quickly.
+If SellerUnblocked prevents even one high-performing rep from leaving—or surfaces one major barrier affecting the team—the platform can often justify itself quickly.
 
 The productivity upside across the broader organization is far greater.
 
@@ -667,14 +667,14 @@ Companies invest heavily in understanding customers.
 
 The next frontier of revenue intelligence is understanding the environment in which sellers operate.
 
-SellerEXP gives leadership a system for measuring, diagnosing, and improving that environment.
+SellerUnblocked gives leadership a system for measuring, diagnosing, and improving that environment.
 
 ---
 
 # Final CTA
 ## See What’s Helping—or Preventing—Your Sellers From Winning
 
-Book a 20-minute overview to see how SellerEXP can reveal hidden friction inside your sales organization and turn seller insight into measurable operational improvement.
+Book a 20-minute overview to see how SellerUnblocked can reveal hidden friction inside your sales organization and turn seller insight into measurable operational improvement.
 
 **Primary CTA:** Book a 20-Minute Overview  
 **Secondary CTA:** See How It Works
@@ -709,7 +709,7 @@ Use **Option 1** as the homepage H1.
 ## 9. Subheadline Options
 
 ## Option 1
-SellerEXP gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.
+SellerUnblocked gives revenue leaders a continuous intelligence system for measuring sales org health—revealing the operational friction, misalignment, and support gaps that slow sellers down.
 
 ## Option 2
 Understand what is helping—or preventing—your sales team from winning through structured seller insight, operational diagnostics, and AI-driven recommendations.
@@ -819,7 +819,7 @@ Think:
 Use this prompt in Cursor after this doc:
 
 ```txt
-Build a premium B2B SaaS landing page for SellerEXP, a Revenue Organization Intelligence platform. The page should feel strategic, modern, and enterprise-ready. Use Next.js, React, TypeScript, Tailwind, and shadcn/ui. Create a high-converting homepage with these sections: sticky header, hero, category insight, cost of seller friction, solution, how it works, what SellerEXP measures, business outcomes, benchmarking/differentiation, audience, ROI, closing positioning statement, and final CTA. Use a polished executive analytics aesthetic with dark/light section contrast, strong typography, subtle gradients, metric cards, and a large dashboard-style hero visual. The messaging should position SellerEXP as a Revenue Organization Intelligence platform, not a survey tool.
+Build a premium B2B SaaS landing page for SellerUnblocked, a Revenue Organization Intelligence platform. The page should feel strategic, modern, and enterprise-ready. Use Next.js, React, TypeScript, Tailwind, and shadcn/ui. Create a high-converting homepage with these sections: sticky header, hero, category insight, cost of seller friction, solution, how it works, what SellerUnblocked measures, business outcomes, benchmarking/differentiation, audience, ROI, closing positioning statement, and final CTA. Use a polished executive analytics aesthetic with dark/light section contrast, strong typography, subtle gradients, metric cards, and a large dashboard-style hero visual. The messaging should position SellerUnblocked as a Revenue Organization Intelligence platform, not a survey tool.
 ```
 
 ---

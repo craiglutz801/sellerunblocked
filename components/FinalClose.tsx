@@ -11,7 +11,7 @@ export default function FinalClose() {
             understanding and improving the environment in which sellers operate.
           </p>
           <p>
-            SellerEXP gives revenue leaders a structured system for measuring, diagnosing, and improving that
+            SellerUnblocked gives revenue leaders a structured system for measuring, diagnosing, and improving that
             environment — while giving sellers personalized support they can use immediately.
           </p>
         </div>

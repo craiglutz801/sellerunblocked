@@ -6,7 +6,7 @@ export default function HeroDualMock({ className = '' }: { className?: string })
       <div className="relative rounded-2xl border border-white/10 bg-ink-light/90 backdrop-blur-sm p-5 sm:p-6 shadow-2xl">
         <div className="flex justify-center mb-5">
           <div className="rounded-full border border-accent/40 bg-accent/15 px-4 py-1.5 text-xs font-semibold text-accent-light">
-            SellerEXP Diagnostic Spine
+            SellerUnblocked Diagnostic Spine
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">

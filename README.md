@@ -1,11 +1,11 @@
-# SellerEXP
+# SellerUnblocked
 
-**Revenue Organization Intelligence** — SellerEXP helps revenue leaders measure the health of their sales organization by revealing operational friction, misalignment, and support gaps that slow sellers down.
+**Revenue Organization Intelligence** — SellerUnblocked helps revenue leaders measure the health of their sales organization by revealing operational friction, misalignment, and support gaps that slow sellers down.
 
 ## Project structure
 
 - **Landing page** (`/`) — Marketing site built from the landing page design doc. Goal: convert CROs, RevOps, and GTM leaders to book a demo.
-- **Product app** (`/app/*`) — Revenue Organization Intelligence UI for licensed customers. Spec: `SellerEXP_Product_Blueprint (1).md`. Uses sample data until backend and auth are wired.
+- **Product app** (`/app/*`) — Revenue Organization Intelligence UI for licensed customers. Spec: `SellerUnblocked_Product_Blueprint (1).md`. Uses sample data until backend and auth are wired.
 
 ### Product routes
 
@@ -103,4 +103,4 @@ npm run start:app
 
 ## Documents
 
-- `documents/sellerexp-landing-page-design-content-doc.md` — Landing page design and content spec.
+- `documents/sellerunblocked-landing-page-design-content-doc.md` — Landing page design and content spec.

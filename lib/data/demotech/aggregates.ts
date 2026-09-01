@@ -427,7 +427,7 @@ export function buildBenchmark() {
     internalTopTeam: Math.min(92, score + 12),
     peerMedian: 72,
     yourScore: score,
-    label: 'External peer set: B2B SaaS demo & sales-tech, 100–600 sellers (n=24 orgs, SellerEXP benchmark)',
+    label: 'External peer set: B2B SaaS demo & sales-tech, 100–600 sellers (n=24 orgs, SellerUnblocked benchmark)',
   }
 }
 
