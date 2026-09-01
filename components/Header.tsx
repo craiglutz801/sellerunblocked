@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-paper/90 backdrop-blur-md border-b border-warm-400/30">
       <div className="container-max flex items-center justify-between gap-4 py-4 md:py-5 px-5 sm:px-8 md:px-12 lg:px-16">
         <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
-          SellerEXP
+          SellerUnblocked
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((item) => (

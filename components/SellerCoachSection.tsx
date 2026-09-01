@@ -21,7 +21,7 @@ export default function SellerCoachSection() {
           A Seller Coach That Helps With the Work in Front of You.
         </h2>
         <p className="mt-6 text-lg text-warm-400 text-center max-w-2xl mx-auto leading-relaxed">
-          A kit should not feel like a list of assignments. SellerEXP can give each rep a private AI guide that
+          A kit should not feel like a list of assignments. SellerUnblocked can give each rep a private AI guide that
           understands their focus areas, role context, approved company resources, and the sales moments where they need
           confidence most.
         </p>

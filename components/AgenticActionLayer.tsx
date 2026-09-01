@@ -21,12 +21,12 @@ export default function AgenticActionLayer() {
           Intelligence Is Useful. Action Is What Changes the Revenue System.
         </h2>
         <p className="mt-6 text-lg text-warm-600 text-center max-w-2xl mx-auto leading-relaxed">
-          SellerEXP uses an AI action layer to connect what sellers are experiencing with the next best move for the
+          SellerUnblocked uses an AI action layer to connect what sellers are experiencing with the next best move for the
           people who can act on it. Leaders get clearer priorities. Sellers get private, practical guidance for the
           work in front of them.
         </p>
 
-        <div className="mt-16" role="img" aria-label="Seller signals flow through SellerEXP intelligence to an AI action layer, which branches into leadership action and seller help.">
+        <div className="mt-16" role="img" aria-label="Seller signals flow through SellerUnblocked intelligence to an AI action layer, which branches into leadership action and seller help.">
           {/* Desktop: horizontal flow */}
           <div className="hidden lg:block">
             <div className="flex items-stretch justify-center gap-3">

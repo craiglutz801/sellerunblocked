@@ -35,7 +35,7 @@ export default function PrivacyTrust() {
           Private for Sellers. Aggregated for Leadership.
         </h2>
         <p className="mt-6 text-lg text-warm-600 text-center max-w-2xl mx-auto">
-          SellerEXP is designed to help sellers without turning feedback into individual surveillance.
+          SellerUnblocked is designed to help sellers without turning feedback into individual surveillance.
         </p>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-8">
@@ -80,7 +80,7 @@ export default function PrivacyTrust() {
         <div className="mt-10 max-w-3xl mx-auto rounded-2xl border border-warm-400/25 bg-cream/40 p-8">
           <h3 className="text-lg font-semibold text-ink text-center">AI remains inside the trust model.</h3>
           <p className="mt-4 text-sm text-warm-600 text-center leading-relaxed">
-            SellerEXP&apos;s AI layer uses approved company knowledge and the seller&apos;s own private context to
+            SellerUnblocked&apos;s AI layer uses approved company knowledge and the seller&apos;s own private context to
             provide support. It does not expose individual feedback to leadership, create rep rankings, or make
             employment decisions.
           </p>

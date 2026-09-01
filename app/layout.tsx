@@ -9,9 +9,9 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'SellerEXP — Revenue Organization Intelligence & Seller Enablement Kits',
+  title: 'SellerUnblocked — Revenue Organization Intelligence & Seller Enablement Kits',
   description:
-    'SellerEXP helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.',
+    'SellerUnblocked helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.',
 }
 
 export default function RootLayout({
