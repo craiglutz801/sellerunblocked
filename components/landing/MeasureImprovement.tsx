@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import DemoLabel from '@/components/landing/ui/DemoLabel'
 import SectionIntro from '@/components/landing/ui/SectionIntro'
 import { MEASURE_SEGMENTS, MEASURE_SERIES } from '@/lib/landing/demo-data'
 
@@ -40,12 +39,9 @@ export default function MeasureImprovement() {
         </SectionIntro>
         <div ref={ref} className="mt-12 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
           <article className="landing-product-frame-light p-6 sm:p-8">
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="text-base font-semibold text-su-text">Pricing approval friction</h3>
-              <DemoLabel />
-            </div>
-            <p className="mt-2 text-sm text-su-secondary">Share of enterprise sellers mentioning the issue. Illustrative.</p>
-            <div className="mt-8 grid grid-cols-3 gap-4" role="img" aria-label="Illustrative trend: 31 percent, then 19 percent after a new approval path, then 12 percent.">
+            <h3 className="text-base font-semibold text-su-text">Pricing approval friction</h3>
+            <p className="mt-2 text-sm text-su-secondary">Share of enterprise sellers mentioning the issue.</p>
+            <div className="mt-8 grid grid-cols-3 gap-4" role="img" aria-label="Trend: 31 percent, then 19 percent after a new approval path, then 12 percent.">
               {MEASURE_SERIES.map((point) => (
                 <div key={point.label}>
                   <div className="flex h-40 items-end rounded-2xl bg-su-paper px-3">
@@ -60,7 +56,7 @@ export default function MeasureImprovement() {
               ))}
             </div>
             <p className="mt-6 text-sm text-su-secondary">
-              Between cycle 1 and cycle 2, the illustrative intervention is a new approval path.
+              Between cycle 1 and cycle 2, the intervention is a new approval path.
             </p>
             <ul className="sr-only">
               {MEASURE_SERIES.map((point) => (

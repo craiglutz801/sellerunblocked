@@ -1,4 +1,3 @@
-import DemoLabel from '@/components/landing/ui/DemoLabel'
 import SectionIntro from '@/components/landing/ui/SectionIntro'
 import { DEMO_PRIORITIES, OWNERS, PIPELINE } from '@/lib/landing/demo-data'
 
@@ -33,8 +32,7 @@ export default function SignalToAction() {
 
         <article className="mt-10 grid gap-8 rounded-[28px] border border-white/10 bg-su-ink p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <DemoLabel light />
-            <h3 className="landing-h3 mt-4">Example action brief</h3>
+            <h3 className="landing-h3">Example action brief</h3>
             <p className="mt-4 text-sm leading-relaxed text-white/65">
               Same healthcare issue as the priority list. The brief is the handoff, not another chart.
             </p>

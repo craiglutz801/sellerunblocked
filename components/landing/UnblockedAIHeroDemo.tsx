@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import DemoLabel from '@/components/landing/ui/DemoLabel'
 import UnblockedMark from '@/components/landing/ui/UnblockedMark'
 import { DEMO_META, DEMO_PRIORITIES, HERO_ANSWER_IDS, answerById } from '@/lib/landing/demo-data'
 
@@ -21,7 +20,7 @@ export default function UnblockedAIHeroDemo() {
   }
 
   return (
-    <div className="landing-product-frame text-white" aria-label="Illustrative UnblockedAI workspace">
+    <div className="landing-product-frame text-white" aria-label="UnblockedAI workspace">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
         <div className="flex min-w-0 items-center gap-3">
           <span className="text-sm font-semibold tracking-tight">SellerUnblocked</span>
@@ -29,8 +28,7 @@ export default function UnblockedAIHeroDemo() {
           <UnblockedMark tone="light" />
         </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-white/60">
-          <DemoLabel light />
-          <span className="landing-mono">{DEMO_META.period}</span>
+          <span className="landing-mono text-white/60">{DEMO_META.period}</span>
           <span className="landing-motion landing-d1 landing-nums text-su-blueBright">
             {DEMO_META.signalCount} seller signals analyzed
           </span>

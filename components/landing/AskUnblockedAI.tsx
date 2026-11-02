@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import DemoLabel from '@/components/landing/ui/DemoLabel'
 import SectionIntro from '@/components/landing/ui/SectionIntro'
 import UnblockedMark from '@/components/landing/ui/UnblockedMark'
 import { ASK_ANSWER_IDS, answerById } from '@/lib/landing/demo-data'
@@ -42,12 +41,9 @@ export default function AskUnblockedAI() {
 
         <div className="landing-product-frame-light mt-12 grid gap-0 overflow-hidden lg:grid-cols-[minmax(16rem,0.8fr)_minmax(0,1.3fr)]">
           <div className="border-b border-su-text/10 p-4 sm:p-5 lg:border-b-0 lg:border-r">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-sm font-semibold text-su-text">
-                Ask <UnblockedMark />
-              </p>
-              <DemoLabel />
-            </div>
+            <p className="text-sm font-semibold text-su-text">
+              Ask <UnblockedMark />
+            </p>
             <div className="mt-4 grid gap-2" role="group" aria-label="Suggested questions">
               {ASK_ANSWER_IDS.map((id) => {
                 const item = answerById(id)
@@ -73,7 +69,7 @@ export default function AskUnblockedAI() {
               <div>
                 <p className="landing-mono text-su-muted">Waiting for a question</p>
                 <p className="mt-4 max-w-md text-lg leading-snug text-su-text">
-                  Choose a question. The answer comes from the same illustrative workspace as the priority list.
+                  Choose a question. The answer comes from the same workspace as the priority list.
                 </p>
               </div>
             ) : pending ? (

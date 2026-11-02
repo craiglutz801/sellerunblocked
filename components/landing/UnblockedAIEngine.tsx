@@ -152,7 +152,7 @@ function StagePreview({ id }: { id: string }) {
 
   return (
     <div className="landing-card-dark p-5 sm:p-6">
-      <p className="landing-mono text-white/45">Pricing-approval mentions · enterprise · illustrative</p>
+      <p className="landing-mono text-white/45">Pricing-approval mentions · enterprise</p>
       <div className="mt-5 grid grid-cols-3 gap-3">
         {MEASURE_SERIES.map((point) => (
           <div key={point.label}>

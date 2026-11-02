@@ -53,9 +53,6 @@ export default function OpenGraphImage() {
               <div style={{ display: 'flex', marginTop: 14, fontSize: 16, color: 'rgba(255,255,255,0.7)', lineHeight: 1.4 }}>
                 23 seller signals · Owner: RevOps
               </div>
-              <div style={{ display: 'flex', marginTop: 18, fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
-                Illustrative data
-              </div>
             </div>
           </div>
         </div>

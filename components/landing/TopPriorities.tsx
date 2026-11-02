@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import DemoLabel from '@/components/landing/ui/DemoLabel'
 import SectionIntro from '@/components/landing/ui/SectionIntro'
 import { DEMO_META, DEMO_PRIORITIES } from '@/lib/landing/demo-data'
 import type { DemoPriority } from '@/lib/landing/types'
@@ -20,10 +19,7 @@ export default function TopPriorities() {
           <div className="landing-product-frame-light overflow-hidden">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-su-text/10 px-4 py-3 sm:px-5">
               <p className="text-sm font-semibold text-su-text">Priority list</p>
-              <div className="flex items-center gap-3">
-                <DemoLabel />
-                <span className="landing-mono text-su-muted">{DEMO_META.period}</span>
-              </div>
+              <span className="landing-mono text-su-muted">{DEMO_META.period}</span>
             </div>
             <div className="hidden grid-cols-[2.5rem_1.45fr_0.85fr_0.7fr_1.05fr_0.65fr] gap-3 border-b border-su-text/10 px-5 py-2 text-[11px] uppercase tracking-[0.12em] text-su-muted lg:grid">
               <span>#</span>

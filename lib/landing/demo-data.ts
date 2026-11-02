@@ -5,10 +5,8 @@ export const DEMO_REQUEST_EMAIL =
   process.env.NEXT_PUBLIC_DEMO_EMAIL || 'craiglutz801@gmail.com'
 
 export const DEMO_META = {
-  label: 'Illustrative workspace',
   period: 'Last 30 days',
   signalCount: 237,
-  note: 'Illustrative data. Not customer results.',
 }
 
 export const DEMO_PRIORITIES: DemoPriority[] = [
@@ -224,7 +222,7 @@ export const DEMO_ANSWERS: DemoAnswer[] = [
     question: 'What friction is unique to our top-performing teams?',
     lead: 'Higher-performing teams in this sample still feel pricing-approval drag and healthcare proof gaps. They mention the partner integration gap less often. CRM duplicate entry is the time drain they share with everyone else. This is an organizational cut, not a rep ranking.',
     evidenceCount: 34,
-    segments: ['Top-quartile teams', 'Illustrative cut'],
+    segments: ['Top-quartile teams'],
     trend: 'Same systemic issues, less partner friction',
     nextStep: 'Fix the shared system issues. Do not treat this cut as a performance scorecard.',
     owner: 'Sales leadership',

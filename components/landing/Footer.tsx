@@ -26,9 +26,6 @@ export default function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-su-secondary">
               AI revenue friction intelligence for the operating reality around your sellers.
             </p>
-            <p className="mt-4 text-xs leading-relaxed text-su-muted">
-              Product screens on this page use illustrative data. They are not customer results.
-            </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-su-secondary" aria-label="Footer">
             {LINKS.map((link) => (

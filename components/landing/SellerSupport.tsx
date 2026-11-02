@@ -41,8 +41,7 @@ export default function SellerSupport() {
             </p>
           </article>
           <article className="landing-card bg-su-ink p-6 text-white sm:p-7">
-            <p className="landing-mono text-su-blueBright">Illustrative</p>
-            <h3 className="mt-3 text-base font-semibold">Your support kit</h3>
+            <h3 className="text-base font-semibold">Your support kit</h3>
             <p className="mt-2 text-sm text-white/70">Focus: Pricing confidence</p>
             <ul className="mt-5 space-y-3">
               {KIT.map((item) => (

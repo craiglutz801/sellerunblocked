@@ -17,8 +17,7 @@ export default function SmartListening() {
           without forcing sellers through a long questionnaire.
         </SectionIntro>
         <div className="landing-product-frame-light p-5 sm:p-7">
-          <p className="landing-mono text-su-muted">Illustrative listening moment</p>
-          <div className="mt-5 space-y-5">
+          <div className="space-y-5">
             <Bubble label="Question" body="What made selling harder than it should have been this month?" />
             <Bubble label="Seller" body="Pricing approvals take forever." />
             <div>

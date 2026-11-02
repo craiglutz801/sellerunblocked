@@ -247,13 +247,6 @@ button:focus-visible {
   box-shadow: var(--su-shadow);
 }
 
-.landing-demo-label {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .landing-grid-dark {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
