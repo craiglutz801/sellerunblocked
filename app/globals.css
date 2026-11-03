@@ -93,3 +93,209 @@ a:focus-visible,
 button:focus-visible {
   @apply outline-2 outline-offset-2 outline-accent;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Marketing landing page. Product UI stays on .product-shell. */
+:root {
+  --su-ink: #090c12;
+  --su-ink-2: #111720;
+  --su-ink-3: #18202b;
+  --su-paper: #f7f6f2;
+  --su-cream: #efede7;
+  --su-white: #ffffff;
+  --su-blue: #72b8ee;
+  --su-blue-strong: #4a9de0;
+  --su-blue-bright: #91d4ff;
+  --su-blue-soft: #e8f4fc;
+  --su-blue-text: #1c6ca3;
+  --su-text: #0d1117;
+  --su-text-secondary: #5f625f;
+  --su-text-muted: #5c615e;
+  --su-border-light: rgba(13, 17, 23, 0.09);
+  --su-border-dark: rgba(255, 255, 255, 0.11);
+  --su-positive: #2f8f68;
+  --su-warning: #b77a1f;
+  --su-negative: #b85151;
+  --su-shadow: 0 24px 70px rgba(9, 12, 18, 0.08);
+  --su-radius-card: 20px;
+  --su-radius-frame: 28px;
+}
+
+.landing-root {
+  color: var(--su-text);
+  background: var(--su-paper);
+  font-feature-settings: 'ss01' on, 'cv11' on;
+  overflow-x: clip;
+}
+
+.landing-root section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+.landing-section {
+  padding: 5rem 1.25rem;
+}
+
+.landing-container {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.landing-hero-container {
+  width: 100%;
+  max-width: 86.25rem;
+  margin-inline: auto;
+}
+
+.landing-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--su-blue-text);
+}
+
+.landing-eyebrow-dark {
+  color: var(--su-blue-bright);
+}
+
+.landing-display {
+  font-size: clamp(2.5rem, 1.35rem + 3.5vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.046em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.landing-statement {
+  font-size: clamp(2.15rem, 1.15rem + 2.7vw, 3.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.landing-h2 {
+  font-size: clamp(2rem, 1.25rem + 2.1vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.036em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.landing-h3 {
+  font-size: clamp(1.35rem, 1.1rem + 0.7vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.026em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.landing-body-lg {
+  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.3125rem);
+  line-height: 1.6;
+}
+
+.landing-body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.landing-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.landing-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.landing-card {
+  background: var(--su-white);
+  border: 1px solid var(--su-border-light);
+  border-radius: var(--su-radius-card);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+.landing-card-dark {
+  background: var(--su-ink-2);
+  border: 1px solid var(--su-border-dark);
+  border-radius: var(--su-radius-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.landing-product-frame {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%), var(--su-ink-2);
+  border: 1px solid var(--su-border-dark);
+  border-radius: var(--su-radius-frame);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.landing-product-frame-light {
+  background: var(--su-white);
+  border: 1px solid var(--su-border-light);
+  border-radius: var(--su-radius-frame);
+  box-shadow: var(--su-shadow);
+}
+
+.landing-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.landing-focus-ring:focus-visible {
+  outline: 2px solid var(--su-blue-strong);
+  outline-offset: 3px;
+}
+
+@keyframes su-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.landing-motion {
+  animation: su-rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.landing-d1 { animation-delay: 0.12s; }
+.landing-d2 { animation-delay: 0.42s; }
+.landing-d3 { animation-delay: 0.72s; }
+.landing-d4 { animation-delay: 1.05s; }
+.landing-d5 { animation-delay: 1.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-motion {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .landing-section {
+    padding: 6.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-section {
+    padding: 8.5rem 2.5rem;
+  }
+}

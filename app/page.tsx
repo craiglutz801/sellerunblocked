@@ -1,55 +1,41 @@
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import TrustFitStrip from '@/components/TrustFitStrip'
-import CategoryInsight from '@/components/CategoryInsight'
-import CostOfFriction from '@/components/CostOfFriction'
-import BrokenFeedbackLoop from '@/components/BrokenFeedbackLoop'
-import Solution from '@/components/Solution'
-import TwoOutcomes from '@/components/TwoOutcomes'
-import AgenticActionLayer from '@/components/AgenticActionLayer'
-import EnablementKits from '@/components/EnablementKits'
-import SellerCoachSection from '@/components/SellerCoachSection'
-import KitAnatomy from '@/components/KitAnatomy'
-import HowItWorks from '@/components/HowItWorks'
-import WhatWeMeasure from '@/components/WhatWeMeasure'
-import PrivacyTrust from '@/components/PrivacyTrust'
-import Benefits from '@/components/Benefits'
-import Benchmarking from '@/components/Benchmarking'
-import WhoItsFor from '@/components/WhoItsFor'
-import ROI from '@/components/ROI'
-import Objections from '@/components/Objections'
-import FinalClose from '@/components/FinalClose'
-import FinalCTA from '@/components/FinalCTA'
-import Footer from '@/components/Footer'
+import AskUnblockedAI from '@/components/landing/AskUnblockedAI'
+import ConversationVsOrganization from '@/components/landing/ConversationVsOrganization'
+import FAQ from '@/components/landing/FAQ'
+import FinalCTA from '@/components/landing/FinalCTA'
+import Footer from '@/components/landing/Footer'
+import FrictionUniverse from '@/components/landing/FrictionUniverse'
+import Header from '@/components/landing/Header'
+import Hero from '@/components/landing/Hero'
+import MeasureImprovement from '@/components/landing/MeasureImprovement'
+import SellerSupport from '@/components/landing/SellerSupport'
+import SignalToAction from '@/components/landing/SignalToAction'
+import SmartListening from '@/components/landing/SmartListening'
+import TopPriorities from '@/components/landing/TopPriorities'
+import TrustModel from '@/components/landing/TrustModel'
+import UnblockedAIEngine from '@/components/landing/UnblockedAIEngine'
+import WhoItsForV2 from '@/components/landing/WhoItsForV2'
 
 export default function Home() {
   return (
-    <>
+    <div className="landing-root">
       <Header />
-      <main>
+      <main id="main">
         <Hero />
-        <TrustFitStrip />
-        <CategoryInsight />
-        <CostOfFriction />
-        <BrokenFeedbackLoop />
-        <Solution />
-        <TwoOutcomes />
-        <AgenticActionLayer />
-        <EnablementKits />
-        <SellerCoachSection />
-        <KitAnatomy />
-        <HowItWorks />
-        <WhatWeMeasure />
-        <PrivacyTrust />
-        <Benefits />
-        <Benchmarking />
-        <WhoItsFor />
-        <ROI />
-        <Objections />
-        <FinalClose />
+        <ConversationVsOrganization />
+        <FrictionUniverse />
+        <UnblockedAIEngine />
+        <TopPriorities />
+        <AskUnblockedAI />
+        <SmartListening />
+        <SignalToAction />
+        <SellerSupport />
+        <TrustModel />
+        <MeasureImprovement />
+        <WhoItsForV2 />
+        <FAQ />
         <FinalCTA />
-        <Footer />
       </main>
-    </>
+      <Footer />
+    </div>
   )
 }

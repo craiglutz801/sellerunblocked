@@ -8,10 +8,35 @@ const jakarta = Plus_Jakarta_Sans({
   display: 'swap',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
 export const metadata: Metadata = {
-  title: 'SellerUnblocked — Revenue Organization Intelligence & Seller Enablement Kits',
+  metadataBase: new URL(siteUrl),
+  title: 'SellerUnblocked | AI Revenue Friction Intelligence',
   description:
-    'SellerUnblocked helps revenue leaders diagnose sales org friction and turn seller feedback into personalized enablement kits for every rep.',
+    'SellerUnblocked uses UnblockedAI to continuously listen to your sales organization, uncover revenue friction across process, product, marketing, pricing, enablement and more, and tell leaders what to fix first.',
+  keywords: [
+    'revenue friction',
+    'revenue organization intelligence',
+    'sales operations intelligence',
+    'seller experience',
+    'RevOps',
+    'sales enablement',
+    'sales organization health',
+    'AI sales operations',
+    'GTM intelligence',
+  ],
+  openGraph: {
+    title: 'SellerUnblocked | AI Revenue Friction Intelligence',
+    description: 'Find what’s blocking revenue. Fix what matters first.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SellerUnblocked | AI Revenue Friction Intelligence',
+    description: 'Find what’s blocking revenue. Fix what matters first.',
+  },
 }
 
 export default function RootLayout({
