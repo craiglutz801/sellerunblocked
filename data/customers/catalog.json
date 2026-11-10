@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "user_operator",
+      "email": "operator@sellerunblocked.local",
+      "name": "Workspace operator",
+      "status": "active",
+      "platformAdmin": true
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org_demotech",
+      "name": "DemoTech",
+      "slug": "demotech",
+      "status": "active",
+      "industry": "B2B software",
+      "sellerCountBand": "500",
+      "region": "North America",
+      "benchmarkEligible": false,
+      "isDemo": true,
+      "createdAt": "2025-04-01T00:00:00.000Z",
+      "createdBy": "user_operator"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem_operator_demotech",
+      "userId": "user_operator",
+      "organizationId": "org_demotech",
+      "role": "admin"
+    }
+  ]
+}

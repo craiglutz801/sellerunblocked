@@ -17,11 +17,12 @@ const PORTAL_META = {
 type Props = {
   portal: PortalId
   cycle: MeasurementCycle
+  portalBadge?: string
   topbarExtra?: React.ReactNode
   children: React.ReactNode
 }
 
-export default function AppShell({ portal, cycle, topbarExtra, children }: Props) {
+export default function AppShell({ portal, cycle, portalBadge, topbarExtra, children }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const meta = PORTAL_META[portal]
 
@@ -36,7 +37,7 @@ export default function AppShell({ portal, cycle, topbarExtra, children }: Props
       <div className="flex-1 flex flex-col min-w-0 md:pl-0 app-shell-main">
         <AppTopbar
           cycle={cycle}
-          portalBadge={meta.badge}
+          portalBadge={portalBadge ?? meta.badge}
           onMenu={() => setMobileOpen(true)}
           extra={topbarExtra}
         />

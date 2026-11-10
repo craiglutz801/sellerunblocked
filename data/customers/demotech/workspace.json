@@ -1,0 +1,27 @@
+{
+  "project": {
+    "id": "prj_demotech",
+    "name": "Revenue org pulse",
+    "templateKey": "demotech-pulse",
+    "status": "active"
+  },
+  "dataset": {
+    "id": "ds_demotech_q2_2025",
+    "name": "Q2 2025 pulse",
+    "periodLabel": "Apr 1 — May 31, 2025"
+  },
+  "activeRevisionId": "rev_demotech_q2_2025",
+  "revisions": [
+    {
+      "id": "rev_demotech_q2_2025",
+      "templateKey": "demotech-pulse",
+      "status": "published",
+      "publishedAt": "2025-06-01T00:00:00.000Z",
+      "publishedBy": "operator@sellerunblocked.local",
+      "submissionCount": 500,
+      "contentHash": "demotech-responses-json",
+      "mode": "seed",
+      "sourceName": "lib/data/demotech/responses.json"
+    }
+  ]
+}

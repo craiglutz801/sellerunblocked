@@ -1,0 +1,21 @@
+{
+  "template": "seller-baseline",
+  "version": 1,
+  "scale": { "min": 1, "max": 5, "higherIsBetter": true },
+  "index": "100 * (value - 1) / 4, rounded. A 4 is 75. Blank, N/A, and Don't know are excluded.",
+  "missingTokens": ["", "n/a", "na", "dont know", "don't know", "dk", "—", "-", "not applicable"],
+  "columns": [
+    { "key": "response_id", "required": true, "description": "Stable id for this response. Required for replace, append, and a safe retry." },
+    { "key": "respondent_id", "required": false, "description": "Internal person code. Do not use an email address." },
+    { "key": "response_date", "required": false, "description": "YYYY-MM-DD" },
+    { "key": "region", "required": false },
+    { "key": "role", "required": false },
+    { "key": "process_clarity", "pillar": "process", "prompt": "I can explain our stages and what good looks like at each one." },
+    { "key": "tool_burden", "pillar": "tools", "prompt": "The tools I use give selling time back more than they take it." },
+    { "key": "enablement_readiness", "pillar": "enablement", "prompt": "I have the practice and content I need before a live deal." },
+    { "key": "message_alignment", "pillar": "alignment", "prompt": "What marketing says matches what buyers ask me." },
+    { "key": "support_speed", "pillar": "support", "prompt": "Deal desk, legal, and specialists respond in time to keep deals moving." },
+    { "key": "comp_clarity", "pillar": "compensation", "prompt": "I can explain how I get paid, including accelerators and SPIFs." },
+    { "key": "open_friction", "required": false, "description": "One open comment. Optional." }
+  ]
+}

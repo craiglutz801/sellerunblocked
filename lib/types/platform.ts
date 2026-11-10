@@ -19,6 +19,12 @@ export type PillarScore = {
   deltaCycle: number
   deltaBenchmark: number
   narrative: string
+  /** False when the pillar has no valid answers. The score is then not a measurement. */
+  available?: boolean
+  /** False on the first published wave, when a cycle delta would be invented. */
+  hasPriorWave?: boolean
+  /** False when no external benchmark release applies to this account. */
+  showBenchmark?: boolean
 }
 
 export type FrictionCell = {
@@ -71,6 +77,8 @@ export type Program = {
   responseRate: number
   targetRate: number
   closesOn: string
+  /** When set, the invited population is unknown and responseRate is not a rate. */
+  participationNote?: string
 }
 
 export type ResponseRow = {
