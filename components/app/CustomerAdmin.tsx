@@ -2,9 +2,17 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import type { MappingReview } from '@/lib/customers/csv'
 import type { CustomerSummary, TemplateKey } from '@/lib/customers/types'
 
 type Issue = { row?: number; column?: string; message: string }
+
+type PendingMap = {
+  action: 'create' | 'import'
+  file: File
+  fields: Record<string, string>
+  review: MappingReview
+}
 
 type ActiveCustomer = {
   slug: string
@@ -17,31 +25,91 @@ type ActiveCustomer = {
   templateKey: TemplateKey | null
 }
 
-async function submit(form: HTMLFormElement, setMessage: (value: string) => void, setIssues: (value: Issue[]) => void) {
-  setMessage('')
-  setIssues([])
-  const response = await fetch('/api/customers', { method: 'POST', body: new FormData(form) })
-  const body = (await response.json()) as {
+async function postCustomers(body: FormData) {
+  const response = await fetch('/api/customers', { method: 'POST', body })
+  return (await response.json()) as {
     ok?: boolean
+    needsMapping?: boolean
+    review?: MappingReview
     name?: string
     submissionCount?: number
     idempotent?: boolean
     warnings?: Issue[]
     errors?: Issue[]
   }
-  if (!response.ok || !body.ok) {
-    setIssues(body.errors ?? [{ message: 'The customer could not be saved.' }])
-    return false
-  }
+}
+
+function resultMessage(body: { name?: string; submissionCount?: number; idempotent?: boolean; warnings?: Issue[] }) {
   const count = body.submissionCount ?? 0
   const warning = body.warnings?.length ? ` ${body.warnings.length} warning${body.warnings.length === 1 ? '' : 's'}.` : ''
-    setMessage(
-      count
-        ? `${body.idempotent ? 'Already published' : 'Published'} ${count} responses for ${body.name}.${warning}`
-        : `Added ${body.name}. No responses yet.${warning}`,
-    )
-    form.reset()
-    return true
+  return count
+    ? `${body.idempotent ? 'Already published' : 'Published'} ${count} responses for ${body.name}.${warning}`
+    : `Added ${body.name}. No responses yet.${warning}`
+}
+
+function formFields(form: HTMLFormElement): Record<string, string> {
+  const fields: Record<string, string> = {}
+  new FormData(form).forEach((value, key) => {
+    if (typeof value === 'string') fields[key] = value
+  })
+  return fields
+}
+
+function MappingPanel({
+  review,
+  choices,
+  pending,
+  onChoice,
+  onConfirm,
+  onCancel,
+}: {
+  review: MappingReview
+  choices: Record<string, string>
+  pending: boolean
+  onChoice: (source: string, target: string) => void
+  onConfirm: () => void
+  onCancel: () => void
+}) {
+  const ready = review.columns.every((column) => choices[column.source])
+  return (
+    <div className="space-y-3 rounded-xl border border-warm-400/40 bg-paper p-4">
+      <p className="text-sm font-semibold text-ink">Map these columns before publishing</p>
+      <p className="text-xs leading-relaxed text-warm-500">
+        These headers are not the baseline template. Nothing is published until each column is mapped or ignored.
+      </p>
+      {review.columns.map((column) => (
+        <label key={column.source} className="block text-sm text-warm-600">
+          <span className="font-medium text-ink">{column.source}</span>
+          {column.samples.length ? <span className="mt-1 block text-xs text-warm-500">{column.samples.join(' · ')}</span> : null}
+          <select
+            className="mt-2 w-full rounded-xl border border-warm-400/40 bg-white px-3 py-2 text-sm text-ink"
+            value={choices[column.source] ?? ''}
+            onChange={(event) => onChoice(column.source, event.target.value)}
+          >
+            <option value="">Choose a field</option>
+            {review.targets.map((target) => (
+              <option key={target.key} value={target.key}>
+                {target.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      ))}
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="button"
+          disabled={pending || !ready}
+          onClick={onConfirm}
+          className="inline-flex rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-dark disabled:opacity-60"
+        >
+          Publish mapped CSV
+        </button>
+        <button type="button" onClick={onCancel} className="text-sm font-semibold text-warm-600 hover:text-ink">
+          Cancel
+        </button>
+      </div>
+    </div>
+  )
 }
 
 function Issues({ issues }: { issues: Issue[] }) {
@@ -72,6 +140,42 @@ export default function CustomerAdmin({
   const [importMessage, setImportMessage] = useState('')
   const [importIssues, setImportIssues] = useState<Issue[]>([])
   const [pending, setPending] = useState(false)
+  const [pendingMap, setPendingMap] = useState<PendingMap | null>(null)
+  const [choices, setChoices] = useState<Record<string, string>>({})
+
+  function showReview(next: PendingMap) {
+    setPendingMap(next)
+    setChoices(Object.fromEntries(next.review.columns.map((column) => [column.source, column.suggested ?? ''])))
+  }
+
+  async function publishMapped() {
+    if (!pendingMap) return
+    setPending(true)
+    const body = new FormData()
+    Object.entries(pendingMap.fields).forEach(([key, value]) => body.set(key, value))
+    body.set('file', pendingMap.file)
+    body.set(
+      'mapping',
+      JSON.stringify(pendingMap.review.columns.map((column) => ({ source: column.source, target: choices[column.source] ?? '' }))),
+    )
+    const setIssues = pendingMap.action === 'create' ? setCreateIssues : setImportIssues
+    const setMessage = pendingMap.action === 'create' ? setCreateMessage : setImportMessage
+    setIssues([])
+    const result = await postCustomers(body)
+    setPending(false)
+    if (result.needsMapping && result.review) {
+      showReview({ ...pendingMap, review: result.review })
+      setIssues(result.errors ?? [])
+      return
+    }
+    if (!result.ok) {
+      setIssues(result.errors ?? [{ message: 'The customer could not be saved.' }])
+      return
+    }
+    setPendingMap(null)
+    setMessage(resultMessage(result))
+    router.refresh()
+  }
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">
@@ -123,10 +227,26 @@ export default function CustomerAdmin({
           className="space-y-3"
           onSubmit={async (event) => {
             event.preventDefault()
+            const form = event.currentTarget
+            const file = (form.elements.namedItem('file') as HTMLInputElement).files?.[0] ?? null
             setPending(true)
-            const ok = await submit(event.currentTarget, setCreateMessage, setCreateIssues)
+            setCreateIssues([])
+            setCreateMessage('')
+            const result = await postCustomers(new FormData(form))
             setPending(false)
-            if (ok) router.refresh()
+            if (result.needsMapping && result.review && file) {
+              showReview({ action: 'create', file, fields: formFields(form), review: result.review })
+              setCreateIssues(result.errors ?? [])
+              return
+            }
+            if (!result.ok) {
+              setCreateIssues(result.errors ?? [{ message: 'The customer could not be saved.' }])
+              return
+            }
+            setPendingMap(null)
+            setCreateMessage(resultMessage(result))
+            form.reset()
+            router.refresh()
           }}
         >
           <input type="hidden" name="action" value="create" />
@@ -142,6 +262,16 @@ export default function CustomerAdmin({
           </div>
           <input name="file" type="file" accept=".csv,text/csv" className="block w-full text-sm text-warm-600" />
           <Issues issues={createIssues} />
+          {pendingMap?.action === 'create' ? (
+            <MappingPanel
+              review={pendingMap.review}
+              choices={choices}
+              pending={pending}
+              onChoice={(source, target) => setChoices((current) => ({ ...current, [source]: target }))}
+              onConfirm={publishMapped}
+              onCancel={() => setPendingMap(null)}
+            />
+          ) : null}
           {createMessage ? <p className="text-sm text-ink">{createMessage}</p> : null}
           <button
             type="submit"
@@ -164,10 +294,26 @@ export default function CustomerAdmin({
             className="space-y-3"
             onSubmit={async (event) => {
               event.preventDefault()
+              const form = event.currentTarget
+              const file = (form.elements.namedItem('file') as HTMLInputElement).files?.[0] ?? null
               setPending(true)
-              const ok = await submit(event.currentTarget, setImportMessage, setImportIssues)
+              setImportIssues([])
+              setImportMessage('')
+              const result = await postCustomers(new FormData(form))
               setPending(false)
-              if (ok) router.refresh()
+              if (result.needsMapping && result.review && file) {
+                showReview({ action: 'import', file, fields: formFields(form), review: result.review })
+                setImportIssues(result.errors ?? [])
+                return
+              }
+              if (!result.ok) {
+                setImportIssues(result.errors ?? [{ message: 'The customer could not be saved.' }])
+                return
+              }
+              setPendingMap(null)
+              setImportMessage(resultMessage(result))
+              form.reset()
+              router.refresh()
             }}
           >
             <input type="hidden" name="action" value="import" />
@@ -181,10 +327,20 @@ export default function CustomerAdmin({
             </label>
             <input name="file" type="file" accept=".csv,text/csv" required className="block w-full text-sm text-warm-600" />
             <p className="text-xs leading-relaxed text-warm-500">
-              Ratings are whole numbers from 1 to 5. Blank, N/A, and Don&apos;t know are skipped, not stored as zero. The same file
-              published twice does not create a second revision.
+              A baseline CSV publishes immediately. Any other column name stops for a mapping. Ratings are whole numbers from 1 to
+              5. Blank, N/A, and Don&apos;t know are skipped, not stored as zero.
             </p>
             <Issues issues={importIssues} />
+            {pendingMap?.action === 'import' ? (
+              <MappingPanel
+                review={pendingMap.review}
+                choices={choices}
+                pending={pending}
+                onChoice={(source, target) => setChoices((current) => ({ ...current, [source]: target }))}
+                onConfirm={publishMapped}
+                onCancel={() => setPendingMap(null)}
+              />
+            ) : null}
             {importMessage ? <p className="text-sm text-ink">{importMessage}</p> : null}
             <button
               type="submit"

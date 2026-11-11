@@ -4,6 +4,7 @@ import os from 'node:os'
 import path from 'node:path'
 import test from 'node:test'
 import { CustomerDataError } from '@/lib/customers/access'
+import { MappingRequiredError } from '@/lib/customers/csv'
 import { meanIndex, ratingToIndex } from '@/lib/customers/metrics'
 import { buildReport } from '@/lib/customers/report'
 import {
@@ -178,6 +179,75 @@ test('a pillar with no valid answers is left out of the index', () => {
   assert.equal(tools?.score, 0)
   assert.equal(support?.available, false)
   assert.equal(report.benchmark.release, 'none')
+})
+
+test('an unfamiliar header waits for a mapping and a saved mapping publishes the next match', () => {
+  const root = tempRoot()
+  const admin = operatorUser(root)
+  const unfamiliar = `response_id,process_clarity,team_name
+M-1,4,West
+`
+  assert.throws(
+    () =>
+      createCustomer(root, admin, {
+        name: 'Mapped Co',
+        industry: 'Software',
+        contactName: 'Mia Admin',
+        contactEmail: 'mia@mapped.example',
+        csv: unfamiliar,
+      }),
+    (error: unknown) => error instanceof MappingRequiredError && error.review.columns.some((column) => column.source === 'team_name'),
+  )
+  assert.equal(readCatalog(root).organizations.some((organization) => organization.slug === 'mapped-co'), false)
+
+  const created = createCustomer(root, admin, {
+    name: 'Mapped Co',
+    industry: 'Software',
+    contactName: 'Mia Admin',
+    contactEmail: 'mia@mapped.example',
+    csv: unfamiliar,
+    mapping: [
+      { source: 'response_id', target: 'response_id' },
+      { source: 'process_clarity', target: 'process_clarity' },
+      { source: 'team_name', target: 'ignore' },
+    ],
+  })
+  const report = buildReport({ root, user: admin, slug: created.organization.slug, strict: true })
+  assert.equal(report.health.score, 75)
+  assert.equal(report.responses[0]?.excerpt.includes('West'), false)
+
+  const again = importCsv(root, admin, { slug: created.organization.slug, csv: unfamiliar, mode: 'replace' })
+  assert.equal(again.idempotent, true)
+  assert.equal(readWorkspace(root, created.organization.slug).revisions.length, 1)
+
+  const renamed = `resp,clarity
+R-1,4
+`
+  const renamedImport = importCsv(root, admin, {
+    slug: created.organization.slug,
+    csv: renamed,
+    mode: 'replace',
+    mapping: [
+      { source: 'resp', target: 'response_id' },
+      { source: 'clarity', target: 'process_clarity' },
+    ],
+  })
+  assert.equal(renamedImport.submissionCount, 1)
+  assert.equal(buildReport({ root, user: admin, slug: created.organization.slug, strict: true }).health.score, 75)
+
+  const extra = `resp,clarity,note
+R-2,5,Pricing exceptions take too long
+`
+  assert.throws(
+    () => importCsv(root, admin, { slug: created.organization.slug, csv: extra, mode: 'replace' }),
+    (error: unknown) => error instanceof MappingRequiredError,
+  )
+  assert.equal(readWorkspace(root, created.organization.slug).activeRevisionId, renamedImport.revisionId)
+
+  assert.throws(
+    () => importCsv(customerRoot(), admin, { slug: 'demotech', csv: unfamiliar, mode: 'replace' }),
+    /seeded pulse/,
+  )
 })
 
 test('the seeded catalog is the demo customer and imports cannot overwrite it', () => {

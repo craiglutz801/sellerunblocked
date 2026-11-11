@@ -58,7 +58,7 @@ The hosted app on Vercel has a read-only disk. Settings will refuse the upload t
 - Required column: `response_id`, unique in the file, max 80 characters.
 - Ratings: integers 1 through 5, or a missing token.
 - `response_date`: blank or `YYYY-MM-DD`.
-- Unknown columns are ignored and reported as warnings.
+- A file whose headers are baseline fields publishes immediately. Any other column stops for a mapping. Each unknown column must be mapped to a baseline field or ignored before anything is published. The confirmed mapping is saved for that header set and reused on the next file with the same columns.
 - A row error rejects the file. The active revision does not move.
 - Publishing the same content again reuses the revision id (the id is the content hash). Appending a file whose ids are already in the active wave is also a no-op.
 - Append refuses a mix of new ids and ids that are already published.

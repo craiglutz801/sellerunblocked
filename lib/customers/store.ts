@@ -2,7 +2,7 @@ import { createHash } from 'crypto'
 import fs from 'fs'
 import path from 'path'
 import { assertCanAdmin, CustomerDataError, isSafeSlug } from '@/lib/customers/access'
-import { parseBaselineCsv, submissionHash } from '@/lib/customers/csv'
+import { MappingRequiredError, parseBaselineCsv, submissionHash, type ColumnMapping } from '@/lib/customers/csv'
 import { BASELINE_TEMPLATE, DEMO_TEMPLATE, MAX_IMPORT_BYTES } from '@/lib/customers/schema'
 import type {
   Catalog,
@@ -209,6 +209,39 @@ export type PublishResult = {
   warnings: ImportIssue[]
 }
 
+type SavedMapping = {
+  signature: string
+  columns: ColumnMapping[]
+  savedAt: string
+}
+
+function mappingPath(root: string, slug: string): string {
+  return path.join(orgDir(root, slug), 'mapping.json')
+}
+
+function readSavedMapping(root: string, slug: string): SavedMapping | null {
+  const file = mappingPath(root, slug)
+  if (!fs.existsSync(file)) return null
+  return readJson<SavedMapping>(file)
+}
+
+function resolveCsv(csv: string, explicit: ColumnMapping[] | null, saved: SavedMapping | null): { parsed: ReturnType<typeof parseBaselineCsv>; mapping: ColumnMapping[] | null } {
+  if (!explicit && saved) {
+    const peek = parseBaselineCsv(csv)
+    if (!peek.needsMapping) return { parsed: peek, mapping: null }
+    if (peek.review && peek.review.signature === saved.signature) {
+      const parsed = parseBaselineCsv(csv, saved.columns)
+      if (parsed.needsMapping && parsed.review) throw new MappingRequiredError(parsed.review, parsed.errors)
+      if (parsed.errors.length) throw new CustomerDataError('The CSV could not be published.', 400, parsed.errors)
+      return { parsed, mapping: saved.columns }
+    }
+  }
+  const parsed = parseBaselineCsv(csv, explicit)
+  if (parsed.needsMapping && parsed.review) throw new MappingRequiredError(parsed.review, parsed.errors)
+  if (parsed.errors.length) throw new CustomerDataError('The CSV could not be published.', 400, parsed.errors)
+  return { parsed, mapping: explicit }
+}
+
 function publishRevision(
   root: string,
   slug: string,
@@ -256,6 +289,7 @@ export function createCustomer(
     contactEmail: string
     csv?: string | null
     sourceName?: string
+    mapping?: ColumnMapping[] | null
   },
 ): PublishResult {
   if (actor.status !== 'active' || !actor.platformAdmin) {
@@ -271,14 +305,17 @@ export function createCustomer(
   const slug = slugify(name)
   let parsedWarnings: ImportIssue[] = []
   let submissions: StoredSubmission[] | null = null
+  let appliedMapping: ColumnMapping[] | null = null
+  let mappingSignature: string | null = null
   if (input.csv && input.csv.trim()) {
     if (Buffer.byteLength(input.csv) > MAX_IMPORT_BYTES) {
       throw new CustomerDataError(`CSV is larger than ${MAX_IMPORT_BYTES} bytes.`)
     }
-    const parsed = parseBaselineCsv(input.csv)
-    if (parsed.errors.length) throw new CustomerDataError('The CSV could not be published.', 400, parsed.errors)
-    submissions = parsed.submissions
-    parsedWarnings = parsed.warnings
+    const resolved = resolveCsv(input.csv, input.mapping ?? null, null)
+    submissions = resolved.parsed.submissions
+    parsedWarnings = resolved.parsed.warnings
+    appliedMapping = resolved.mapping
+    mappingSignature = resolved.parsed.review?.signature ?? null
   }
 
   return withLock(root, () => {
@@ -348,6 +385,13 @@ export function createCustomer(
       idempotent = published.idempotent
     }
     writeJson(path.join(orgDir(root, slug), 'workspace.json'), workspace)
+    if (appliedMapping && mappingSignature) {
+      writeJson(mappingPath(root, slug), {
+        signature: mappingSignature,
+        columns: appliedMapping,
+        savedAt: now,
+      } satisfies SavedMapping)
+    }
     writeJson(path.join(root, 'catalog.json'), catalog)
     return {
       organization,
@@ -362,36 +406,44 @@ export function createCustomer(
 export function importCsv(
   root: string,
   actor: UserRecord,
-  input: { slug: string; csv: string; mode: ImportMode; sourceName?: string },
+  input: { slug: string; csv: string; mode: ImportMode; sourceName?: string; mapping?: ColumnMapping[] | null },
 ): PublishResult {
   if (!isSafeSlug(input.slug)) throw new CustomerDataError('Unknown customer.', 404)
   if (Buffer.byteLength(input.csv) > MAX_IMPORT_BYTES) {
     throw new CustomerDataError(`CSV is larger than ${MAX_IMPORT_BYTES} bytes.`)
   }
-  const parsed = parseBaselineCsv(input.csv)
-  if (parsed.errors.length) throw new CustomerDataError('The CSV could not be published.', 400, parsed.errors)
+  const catalog = readCatalog(root)
+  const organization = catalog.organizations.find((candidate) => candidate.slug === input.slug)
+  if (!organization) throw new CustomerDataError('Unknown customer.', 404)
+  assertCanAdmin(actor, organization, catalog)
+  const workspace = readWorkspace(root, organization.slug)
+  if (workspace.project.templateKey !== BASELINE_TEMPLATE) {
+    throw new CustomerDataError('DemoTech keeps its seeded pulse. Add a customer for a real baseline.')
+  }
+  const resolved = resolveCsv(input.csv, input.mapping ?? null, readSavedMapping(root, organization.slug))
+  const parsed = resolved.parsed
 
   return withLock(root, () => {
-    const catalog = readCatalog(root)
-    const organization = catalog.organizations.find((candidate) => candidate.slug === input.slug)
-    if (!organization) throw new CustomerDataError('Unknown customer.', 404)
-    assertCanAdmin(actor, organization, catalog)
-    const workspace = readWorkspace(root, organization.slug)
-    if (workspace.project.templateKey !== BASELINE_TEMPLATE) {
+    const currentCatalog = readCatalog(root)
+    const currentOrg = currentCatalog.organizations.find((candidate) => candidate.slug === input.slug)
+    if (!currentOrg) throw new CustomerDataError('Unknown customer.', 404)
+    assertCanAdmin(actor, currentOrg, currentCatalog)
+    const currentWorkspace = readWorkspace(root, currentOrg.slug)
+    if (currentWorkspace.project.templateKey !== BASELINE_TEMPLATE) {
       throw new CustomerDataError('DemoTech keeps its seeded pulse. Add a customer for a real baseline.')
     }
     let submissions = parsed.submissions
     if (input.mode === 'append') {
-      if (!workspace.activeRevisionId) {
+      if (!currentWorkspace.activeRevisionId) {
         throw new CustomerDataError('Nothing is published yet. Use replace to publish the first wave.')
       }
-      const current = readRevision(root, organization.slug, workspace.activeRevisionId).submissions
+      const current = readRevision(root, currentOrg.slug, currentWorkspace.activeRevisionId).submissions
       const known = new Set(current.map((submission) => submission.responseId))
       const overlap = submissions.filter((submission) => known.has(submission.responseId))
       if (overlap.length === submissions.length) {
         return {
-          organization,
-          revisionId: workspace.activeRevisionId,
+          organization: currentOrg,
+          revisionId: currentWorkspace.activeRevisionId,
           submissionCount: current.length,
           idempotent: true,
           warnings: parsed.warnings,
@@ -411,16 +463,23 @@ export function importCsv(
     }
     const published = publishRevision(
       root,
-      organization.slug,
-      workspace,
+      currentOrg.slug,
+      currentWorkspace,
       submissions,
       input.mode,
       input.sourceName || 'upload.csv',
       actor.email,
     )
-    writeJson(path.join(orgDir(root, organization.slug), 'workspace.json'), published.workspace)
+    writeJson(path.join(orgDir(root, currentOrg.slug), 'workspace.json'), published.workspace)
+    if (resolved.mapping && parsed.review) {
+      writeJson(mappingPath(root, currentOrg.slug), {
+        signature: parsed.review.signature,
+        columns: resolved.mapping,
+        savedAt: new Date().toISOString(),
+      } satisfies SavedMapping)
+    }
     return {
-      organization,
+      organization: currentOrg,
       revisionId: published.revisionId,
       submissionCount: submissions.length,
       idempotent: published.idempotent,

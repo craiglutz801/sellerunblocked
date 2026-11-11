@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { CustomerDataError } from '@/lib/customers/access'
+import { MappingRequiredError, type ColumnMapping, type MappingTarget } from '@/lib/customers/csv'
 import { MAX_IMPORT_BYTES } from '@/lib/customers/schema'
 import { createCustomer, customerRoot, importCsv, operatorUser } from '@/lib/customers/store'
 import type { ImportMode } from '@/lib/customers/types'
@@ -34,11 +35,34 @@ function failure(error: unknown) {
       { status: 500 },
     )
   }
+  if (error instanceof MappingRequiredError) {
+    return NextResponse.json(
+      { ok: false, needsMapping: true, review: error.review, errors: error.errors },
+      { status: 409 },
+    )
+  }
   if (error instanceof CustomerDataError) {
     return NextResponse.json({ ok: false, errors: error.errors }, { status: error.status })
   }
   console.error(error)
   return NextResponse.json({ ok: false, errors: [{ message: 'The customer could not be saved.' }] }, { status: 500 })
+}
+
+function mappingFrom(form: FormData): ColumnMapping[] | null {
+  const raw = form.get('mapping')
+  if (typeof raw !== 'string' || !raw.trim()) return null
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(raw)
+  } catch {
+    throw new CustomerDataError('Column mapping is invalid.')
+  }
+  if (!Array.isArray(parsed)) throw new CustomerDataError('Column mapping is invalid.')
+  return parsed.map((entry) => {
+    const source = typeof entry?.source === 'string' ? entry.source : ''
+    const target = typeof entry?.target === 'string' ? entry.target : ''
+    return { source, target: target as MappingTarget }
+  })
 }
 
 async function csvFrom(form: FormData): Promise<{ csv: string; name: string } | null> {
@@ -57,6 +81,7 @@ export async function POST(request: Request) {
     const root = customerRoot()
     const actor = operatorUser(root)
     const uploaded = await csvFrom(form)
+    const mapping = mappingFrom(form)
 
     if (action === 'import') {
       const slug = String(form.get('slug') ?? '')
@@ -68,6 +93,7 @@ export async function POST(request: Request) {
         csv: uploaded.csv,
         mode: mode as ImportMode,
         sourceName: uploaded.name,
+        mapping,
       })
       remember(result.organization.slug)
       return NextResponse.json({
@@ -90,6 +116,7 @@ export async function POST(request: Request) {
       contactEmail: String(form.get('contactEmail') ?? ''),
       csv: uploaded?.csv ?? null,
       sourceName: uploaded?.name,
+      mapping,
     })
     remember(result.organization.slug)
     return NextResponse.json({
