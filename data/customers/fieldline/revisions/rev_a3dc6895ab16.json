@@ -1,0 +1,389 @@
+{
+  "id": "rev_a3dc6895ab16",
+  "submissions": [
+    {
+      "responseId": "FL-01",
+      "respondentId": "r01",
+      "responseDate": "2026-03-01",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": "Quote exceptions sit with deal desk for days before anyone answers."
+    },
+    {
+      "responseId": "FL-02",
+      "respondentId": "r02",
+      "responseDate": "2026-03-02",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": "When a quote needs an exception, legal and the specialist queue both wait."
+    },
+    {
+      "responseId": "FL-03",
+      "respondentId": "r03",
+      "responseDate": "2026-03-03",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": "The delay starts after the quote exception, not during the first pricing pass."
+    },
+    {
+      "responseId": "FL-04",
+      "respondentId": "r04",
+      "responseDate": "2026-03-04",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-05",
+      "respondentId": "r05",
+      "responseDate": "2026-03-05",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-06",
+      "respondentId": "r06",
+      "responseDate": "2026-03-06",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-07",
+      "respondentId": "r07",
+      "responseDate": "2026-03-07",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-08",
+      "respondentId": "r08",
+      "responseDate": "2026-03-08",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 2,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-09",
+      "respondentId": "r09",
+      "responseDate": "2026-03-09",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-10",
+      "respondentId": "r10",
+      "responseDate": "2026-03-10",
+      "region": "East",
+      "role": "Account Executive",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-11",
+      "respondentId": "r11",
+      "responseDate": "2026-03-11",
+      "region": "East",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-12",
+      "respondentId": "r12",
+      "responseDate": "2026-03-12",
+      "region": "East",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-13",
+      "respondentId": "r13",
+      "responseDate": "2026-03-13",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-14",
+      "respondentId": "r14",
+      "responseDate": "2026-03-14",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-15",
+      "respondentId": "r15",
+      "responseDate": "2026-03-15",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-16",
+      "respondentId": "r16",
+      "responseDate": "2026-03-16",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-17",
+      "respondentId": "r17",
+      "responseDate": "2026-03-17",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-18",
+      "respondentId": "r18",
+      "responseDate": "2026-03-18",
+      "region": "West",
+      "role": "Sales Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-19",
+      "respondentId": "r19",
+      "responseDate": "2026-03-19",
+      "region": "West",
+      "role": "Solutions Consultant",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-20",
+      "respondentId": "r20",
+      "responseDate": "2026-03-20",
+      "region": "West",
+      "role": "Solutions Consultant",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": 3,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-21",
+      "respondentId": "r21",
+      "responseDate": "2026-03-21",
+      "region": "West",
+      "role": "Solutions Consultant",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": null,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-22",
+      "respondentId": "r22",
+      "responseDate": "2026-03-22",
+      "region": "West",
+      "role": "Partner Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": null,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-23",
+      "respondentId": "r23",
+      "responseDate": "2026-03-23",
+      "region": "West",
+      "role": "Partner Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": null,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    },
+    {
+      "responseId": "FL-24",
+      "respondentId": "r24",
+      "responseDate": "2026-03-24",
+      "region": "West",
+      "role": "Partner Manager",
+      "ratings": {
+        "process_clarity": 4,
+        "tool_burden": 4,
+        "enablement_readiness": 5,
+        "message_alignment": 4,
+        "support_speed": null,
+        "comp_clarity": 4
+      },
+      "openFriction": ""
+    }
+  ]
+}

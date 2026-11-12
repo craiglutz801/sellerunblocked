@@ -9,3 +9,8 @@ out/
 
 # macOS
 .DS_Store
+
+# Customer import lock and atomic-write leftovers
+data/customers/.lock
+data/customers/**/*.tmp
+data/customers/**/actions.json

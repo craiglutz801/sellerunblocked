@@ -18,6 +18,7 @@ import {
   STAGE_QUESTIONS,
 } from '@/lib/data/demotech/config'
 import { getAllResponses, getIcResponses } from '@/lib/data/demotech/load'
+import { ratingToIndex } from '@/lib/customers/metrics'
 
 const BENCHMARK_PILLARS: Record<PillarKey, number> = {
   process: 74,
@@ -28,20 +29,34 @@ const BENCHMARK_PILLARS: Record<PillarKey, number> = {
   compensation: 74,
 }
 
-function avg(ids: readonly string[], row: SurveyResponse): number {
-  const vals = ids.map((id) => Number(row[id])).filter((n) => !Number.isNaN(n))
-  if (!vals.length) return 3
+function avg(ids: readonly string[], row: SurveyResponse): number | null {
+  const vals = ids.map((id) => Number(row[id])).filter((n) => Number.isFinite(n))
+  if (!vals.length) return null
   return vals.reduce((a, b) => a + b, 0) / vals.length
 }
 
-export function likertToScore(likertAvg: number): number {
-  return Math.round(((likertAvg - 1) / 4) * 100)
+function finiteMean(values: Array<number | null>): number {
+  const present = values.filter((value): value is number => value != null && Number.isFinite(value))
+  if (!present.length) return Number.NaN
+  return present.reduce((sum, value) => sum + value, 0) / present.length
+}
+
+export function likertToScore(likertAvg: number | null): number {
+  if (likertAvg == null || !Number.isFinite(likertAvg)) return Number.NaN
+  return ratingToIndex(likertAvg, 1, 5, true)
 }
 
 export function pillarAvg(responses: SurveyResponse[], key: PillarKey): number {
   const ids = PILLAR_QUESTION_MAP[key]
-  const avgs = responses.map((r) => avg(ids, r))
-  return avgs.reduce((a, b) => a + b, 0) / avgs.length
+  const values: number[] = []
+  for (const row of responses) {
+    for (const id of ids) {
+      const value = Number(row[id])
+      if (Number.isFinite(value)) values.push(value)
+    }
+  }
+  if (!values.length) return Number.NaN
+  return values.reduce((sum, value) => sum + value, 0) / values.length
 }
 
 export function orgPillarScores(): Record<PillarKey, number> {
@@ -57,8 +72,7 @@ export function orgPillarScores(): Record<PillarKey, number> {
 
 export function orgOverallScore(): number {
   const responses = getAllResponses()
-  const avgs = responses.map((r) => avg(QUESTION_GROUPS.overall, r))
-  const mean = avgs.reduce((a, b) => a + b, 0) / avgs.length
+  const mean = finiteMean(responses.map((r) => avg(QUESTION_GROUPS.overall, r)))
   return likertToScore(mean)
 }
 
@@ -175,7 +189,7 @@ export function buildDimensions(): DimensionRow[] {
     { label: 'Organizational alignment', ids: QUESTION_GROUPS.org_alignment },
   ]
   return dims.map((d) => {
-    const mean = responses.map((r) => avg(d.ids, r)).reduce((a, b) => a + b, 0) / responses.length
+    const mean = finiteMean(responses.map((r) => avg(d.ids, r)))
     const score = likertToScore(mean)
     return {
       dimension: d.label,
@@ -210,6 +224,7 @@ function themeFromText(text: string): string {
 
 function sentimentFromScores(row: SurveyResponse): 'positive' | 'neutral' | 'negative' {
   const o = avg(QUESTION_GROUPS.overall, row)
+  if (o == null) return 'neutral'
   if (o >= 4) return 'positive'
   if (o <= 2.5) return 'negative'
   return 'neutral'
@@ -343,6 +358,7 @@ export function buildInsights(pillars: PillarScore[]): Insight[] {
       headline: 'Enterprise support confidence trails Commercial by a widening margin',
       body: `Enterprise support scores ${entSupport}/100 vs Commercial ${comSupport}/100. Legal review and SE coverage dominate Enterprise open text.`,
       severity: 'risk',
+      pillarKey: 'support',
     },
     {
       id: 'in-2',
@@ -435,15 +451,9 @@ export function buildBenchmarkDimensions() {
   const score = orgOverallScore()
   const pillars = orgPillarScores()
   const ease = likertToScore(
-    getAllResponses()
-      .map((r) => avg([...QUESTION_GROUPS.process, ...QUESTION_GROUPS.tools], r))
-      .reduce((a, b) => a + b, 0) / getAllResponses().length,
+    finiteMean(getAllResponses().map((r) => avg([...QUESTION_GROUPS.process, ...QUESTION_GROUPS.tools], r))),
   )
-  const mgr = likertToScore(
-    getAllResponses()
-      .map((r) => avg(['J4', 'D3'], r))
-      .reduce((a, b) => a + b, 0) / getAllResponses().length,
-  )
+  const mgr = likertToScore(finiteMean(getAllResponses().map((r) => avg(['J4', 'D3'], r))))
   return [
     { dimension: 'Overall health', you: score, peerP50: 72, peerP75: 81 },
     { dimension: 'Ease of selling', you: ease, peerP50: 74, peerP75: 82 },

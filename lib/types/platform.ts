@@ -19,6 +19,12 @@ export type PillarScore = {
   deltaCycle: number
   deltaBenchmark: number
   narrative: string
+  /** False when the pillar has no valid answers. The score is then not a measurement. */
+  available?: boolean
+  /** False on the first published wave, when a cycle delta would be invented. */
+  hasPriorWave?: boolean
+  /** False when no external benchmark release applies to this account. */
+  showBenchmark?: boolean
 }
 
 export type FrictionCell = {
@@ -53,6 +59,8 @@ export type Insight = {
   headline: string
   body: string
   severity: 'positive' | 'neutral' | 'risk'
+  /** Set when the insight is about one pillar UnblockedAI can open. */
+  pillarKey?: PillarKey
 }
 
 export type ThemeCluster = {
@@ -71,6 +79,8 @@ export type Program = {
   responseRate: number
   targetRate: number
   closesOn: string
+  /** When set, the invited population is unknown and responseRate is not a rate. */
+  participationNote?: string
 }
 
 export type ResponseRow = {
@@ -112,4 +122,7 @@ export type ActionItem = {
   lastNote: string
   slackChannel: string
   lastSlackMessageAt: string
+  /** Present on an action saved from UnblockedAI. */
+  measurementNote?: string
+  sourceNote?: string
 }

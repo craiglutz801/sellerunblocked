@@ -1,0 +1,9 @@
+response_id,respondent_id,response_date,region,role,process_clarity,tool_burden,enablement_readiness,message_alignment,support_speed,comp_clarity,open_friction
+EX-1001,S-01,2026-10-02,North America,Account Executive,4,3,4,2,2,4,Legal review stalled a late-stage deal for two weeks.
+EX-1002,S-02,2026-10-03,North America,Account Executive,5,4,3,3,2,4,CRM updates eat the morning before I can prospect.
+EX-1003,S-03,2026-10-03,EMEA,Account Executive,3,2,3,2,1,3,I cannot tell which proof points marketing wants us to use.
+EX-1004,S-04,2026-10-04,EMEA,Sales Development,4,3,2,3,3,2,Handoffs arrive without the notes I need.
+EX-1005,S-05,2026-10-06,North America,Account Manager,4,4,4,4,3,5,Comp plan is clear. Support on renewals is slow.
+EX-1006,S-06,2026-10-06,APAC,Account Executive,3,3,N/A,2,2,3,
+EX-1007,S-07,2026-10-08,North America,Sales Manager,4,3,4,3,2,4,Managers do not get time to coach live deals.
+EX-1008,S-08,2026-10-09,EMEA,Account Executive,2,2,3,2,2,Don't know,Deal desk turnaround is the bottleneck on my quarter.

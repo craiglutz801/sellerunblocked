@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "id": "user_operator",
+      "email": "operator@sellerunblocked.local",
+      "name": "Workspace operator",
+      "status": "active",
+      "platformAdmin": true
+    },
+    {
+      "id": "user_0cff5ce905",
+      "email": "pat@fieldline.example",
+      "name": "Pat Admin",
+      "status": "active"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org_demotech",
+      "name": "DemoTech",
+      "slug": "demotech",
+      "status": "active",
+      "industry": "B2B software",
+      "sellerCountBand": "500",
+      "region": "North America",
+      "benchmarkEligible": false,
+      "isDemo": true,
+      "createdAt": "2025-04-01T00:00:00.000Z",
+      "createdBy": "user_operator"
+    },
+    {
+      "id": "org_fieldline",
+      "name": "Fieldline",
+      "slug": "fieldline",
+      "status": "active",
+      "industry": "Wholesale",
+      "sellerCountBand": "",
+      "region": "",
+      "benchmarkEligible": false,
+      "isDemo": false,
+      "createdAt": "2026-11-12T05:53:18.176Z",
+      "createdBy": "user_operator"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem_operator_demotech",
+      "userId": "user_operator",
+      "organizationId": "org_demotech",
+      "role": "admin"
+    },
+    {
+      "id": "mem_user_0cff5ce905_org_fieldline",
+      "userId": "user_0cff5ce905",
+      "organizationId": "org_fieldline",
+      "role": "admin"
+    },
+    {
+      "id": "mem_user_operator_org_fieldline",
+      "userId": "user_operator",
+      "organizationId": "org_fieldline",
+      "role": "admin"
+    }
+  ]
+}

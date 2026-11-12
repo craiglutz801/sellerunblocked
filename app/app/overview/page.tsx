@@ -1,19 +1,14 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import SectionHeader from '@/components/app/SectionHeader'
+import EmptyWorkspace from '@/components/app/EmptyWorkspace'
 import FrictionHeatmap from '@/components/app/FrictionHeatmap'
 import PillarCard from '@/components/app/cards/PillarCard'
 import ScoreCard from '@/components/app/cards/ScoreCard'
 import TrendSparkline from '@/components/app/charts/TrendSparkline'
-import {
-  MOCK_BENCHMARK,
-  MOCK_HEALTH_INDEX,
-  MOCK_HEATMAP,
-  MOCK_PILLARS,
-  MOCK_RECOMMENDATIONS,
-  MOCK_SPARKLINE,
-  MOCK_THEMES,
-} from '@/lib/data/mock/platform'
+import AskButton from '@/components/app/unblocked-ai/AskButton'
+import { loadReport } from '@/lib/customers/active'
+import { pillarKeyForRecommendation } from '@/lib/unblocked-ai/policy'
 
 export const metadata: Metadata = {
   title: 'Overview',
@@ -49,18 +44,20 @@ function ThemeClusterCard({
 }
 
 export default function OverviewPage() {
+  const report = loadReport()
+  if (!report.published) {
+    return <EmptyWorkspace name={report.organizationName} />
+  }
+  const health = report.health
+
   return (
     <>
-      <SectionHeader
-        eyebrow="DemoTech · Revenue organization health"
-        title="Your revenue organization is healthy overall — but seller confidence is breaking down in key moments."
-        description="This overview is a narrative-first executive view: overall health, where friction concentrates, what changed, how you compare, and what to do next."
-      />
+      <SectionHeader eyebrow={report.eyebrow} title={report.headline} description={report.description} />
 
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-8 lg:items-stretch">
         <div className="app-card flex h-full min-h-full flex-col p-6 md:p-8">
           <p className="app-eyebrow text-warm-500">Executive summary</p>
-          <p className="mt-4 text-lg text-ink leading-relaxed">{MOCK_HEALTH_INDEX.narrative}</p>
+          <p className="mt-4 text-lg text-ink leading-relaxed">{health.narrative}</p>
           <div className="min-h-6 flex-1" aria-hidden />
           <div className="flex flex-wrap gap-3">
             <Link
@@ -75,88 +72,125 @@ export default function OverviewPage() {
             >
               See recommendations
             </Link>
+            <Link
+              href="/app/unblocked-ai"
+              className="inline-flex items-center rounded-full border border-accent/35 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:bg-accent/10 transition-colors"
+            >
+              View UnblockedAI readout
+            </Link>
           </div>
         </div>
-        <ScoreCard
-          label="Seller Experience Overall Index Score"
-          score={MOCK_HEALTH_INDEX.score}
-          deltaCycle={MOCK_HEALTH_INDEX.deltaCycle}
-          deltaBenchmark={MOCK_HEALTH_INDEX.deltaBenchmark}
-          footnote="Normalized 0–100. In production, pair with sample size, confidence, and cycle context."
-          className="h-full min-h-full md:p-8"
-          emphasized
-        />
+        {health.score == null ? (
+          <div className="app-card flex h-full items-center p-6 md:p-8">
+            <p className="text-sm leading-relaxed text-warm-600">No valid ratings in this wave, so the index is not shown as zero.</p>
+          </div>
+        ) : (
+          <ScoreCard
+            label="Seller Experience Overall Index Score"
+            score={health.score}
+            deltaCycle={health.deltaCycle ?? undefined}
+            deltaBenchmark={health.deltaBenchmark ?? undefined}
+            footnote={health.footnote}
+            className="h-full min-h-full md:p-8"
+            emphasized
+          />
+        )}
       </div>
 
-      <div className="app-card mt-8 p-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="app-eyebrow text-warm-500">Trend</p>
-            <p className="mt-1 text-sm font-medium text-ink">Seller Experience Index Score</p>
+      {report.sparkline.length ? (
+        <div className="app-card mt-8 p-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="app-eyebrow text-warm-500">Trend</p>
+              <p className="mt-1 text-sm font-medium text-ink">Seller Experience Index Score</p>
+            </div>
           </div>
+          <TrendSparkline data={report.sparkline} />
+          {report.sparklineNote ? <p className="text-xs leading-relaxed text-warm-500">{report.sparklineNote}</p> : null}
         </div>
-        <TrendSparkline data={MOCK_SPARKLINE} />
-      </div>
+      ) : null}
 
       <section className="mt-14">
         <h2 className="section-title mb-6">Health pillars</h2>
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {MOCK_PILLARS.map((p) => (
+          {report.pillars.map((p) => (
             <PillarCard key={p.key} pillar={p} />
           ))}
         </div>
       </section>
 
-      <section className="mt-14">
-        <h2 className="section-title mb-2">Friction concentration</h2>
-        <p className="text-sm text-warm-600 max-w-2xl mb-6">
-          Stage × dimension heatmap shows where the operating environment adds drag. Drill into diagnostics for cohort splits.
-        </p>
-        <FrictionHeatmap cells={MOCK_HEATMAP} />
-      </section>
+      {report.heatmap.length ? (
+        <section className="mt-14">
+          <h2 className="section-title mb-2">Friction concentration</h2>
+          <p className="text-sm text-warm-600 max-w-2xl mb-6">{report.heatmapCaption}</p>
+          <FrictionHeatmap cells={report.heatmap} />
+        </section>
+      ) : null}
 
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
         <div>
           <h2 className="section-title mb-2">Recommended actions this quarter</h2>
           <p className="text-sm text-warm-600 mb-6">Opinionated, evidence-linked priorities — not a task list.</p>
-          <ul className="space-y-4">
-            {MOCK_RECOMMENDATIONS.map((r) => (
-              <li
-                key={r.id}
-                className="app-card p-5"
-              >
-                <p className="text-xs font-semibold text-accent-dark">{r.priority}</p>
-                <p className="mt-1 font-semibold text-ink">{r.title}</p>
-                <p className="mt-2 text-sm text-warm-600 leading-relaxed">{r.issue}</p>
-                <p className="mt-3 text-xs text-warm-500">{r.evidenceSummary}</p>
-              </li>
-            ))}
-          </ul>
+          {report.recommendations.length ? (
+            <ul className="space-y-4">
+              {report.recommendations.map((r) => (
+                <li key={r.id} className="app-card p-5">
+                  <p className="text-xs font-semibold text-accent-dark">{r.priority}</p>
+                  <p className="mt-1 font-semibold text-ink">{r.title}</p>
+                  <p className="mt-2 text-sm text-warm-600 leading-relaxed">{r.issue}</p>
+                  <p className="mt-3 text-xs text-warm-500">{r.evidenceSummary}</p>
+                  {pillarKeyForRecommendation(r.id) ? (
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      <AskButton
+                        label="View evidence"
+                        question={`Why is ${r.category.toLowerCase()} low?`}
+                        intent="explain"
+                        pillarKey={pillarKeyForRecommendation(r.id)}
+                        surface="overview"
+                        mode="evidence"
+                      />
+                      <AskButton
+                        label="Draft an action"
+                        question="Draft an action for this."
+                        intent="action"
+                        pillarKey={pillarKeyForRecommendation(r.id)}
+                        recommendationId={r.id}
+                        surface="overview"
+                        mode="draft"
+                      />
+                    </div>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-warm-600">No recommendation until a pillar has valid ratings.</p>
+          )}
           <Link href="/app/recommendations" className="inline-block mt-6 text-sm font-semibold text-accent-dark hover:text-ink">
             Open recommendations →
           </Link>
         </div>
         <div>
           <h2 className="section-title mb-2">Benchmark context</h2>
-          <p className="text-sm text-warm-600 mb-6">{MOCK_BENCHMARK.label}</p>
+          <p className="text-sm text-warm-600 mb-6">{report.benchmark.label}</p>
           <div className="app-card space-y-6 p-6">
             <div className="flex items-baseline justify-between gap-4">
               <span className="text-sm text-warm-600">Your org</span>
-              <span className="text-3xl font-semibold tabular-nums">{MOCK_BENCHMARK.yourScore}</span>
+              <span className="text-3xl font-semibold tabular-nums">{report.benchmark.yourScore ?? '—'}</span>
             </div>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between gap-4 text-warm-600">
                 <span>Peer median</span>
-                <span className="font-medium text-ink tabular-nums">{MOCK_BENCHMARK.peerMedian}</span>
+                <span className="font-medium text-ink tabular-nums">{report.benchmark.peerMedian ?? '—'}</span>
               </div>
               <div className="flex justify-between gap-4 text-warm-600">
-                <span>Internal top teams</span>
-                <span className="font-medium text-ink tabular-nums">{MOCK_BENCHMARK.internalTopTeam}</span>
+                <span>{report.benchmark.internalLabel ?? 'Internal top teams'}</span>
+                <span className="font-medium text-ink tabular-nums">{report.benchmark.internalTopTeam ?? '—'}</span>
               </div>
             </div>
-            <p className="text-xs text-warm-500 leading-relaxed border-t border-warm-400/30 pt-4">
-              You outperform benchmark on ease of selling, but trail peers on manager confidence and support consistency — matching the qualitative themes below.
-            </p>
+            {report.benchmarkNote ? (
+              <p className="text-xs text-warm-500 leading-relaxed border-t border-warm-400/30 pt-4">{report.benchmarkNote}</p>
+            ) : null}
           </div>
           <Link href="/app/benchmarks" className="inline-block mt-6 text-sm font-semibold text-accent-dark hover:text-ink">
             Explore benchmarks →
@@ -166,20 +200,16 @@ export default function OverviewPage() {
 
       <section className="mt-14">
         <h2 className="section-title mb-2">Qualitative themes</h2>
-        <p className="text-sm text-warm-600 mb-6">
-          Clustered seller language. Production uses controlled disclosure, not raw dumps.
-        </p>
-        <div className="grid gap-6 md:grid-cols-2">
-          {MOCK_THEMES.map((t) => (
-            <ThemeClusterCard
-              key={t.id}
-              label={t.label}
-              prevalence={t.prevalence}
-              sentiment={t.sentiment}
-              quotes={t.quotes}
-            />
-          ))}
-        </div>
+        <p className="text-sm text-warm-600 mb-6">Clustered seller language. Production uses controlled disclosure, not raw dumps.</p>
+        {report.themes.length ? (
+          <div className="grid gap-6 md:grid-cols-2">
+            {report.themes.map((t) => (
+              <ThemeClusterCard key={t.id} label={t.label} prevalence={t.prevalence} sentiment={t.sentiment} quotes={t.quotes} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-warm-600">No open-text responses in this wave.</p>
+        )}
       </section>
     </>
   )

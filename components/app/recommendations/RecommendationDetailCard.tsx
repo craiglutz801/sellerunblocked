@@ -1,4 +1,6 @@
 import type { Recommendation } from '@/lib/types/platform'
+import AskButton from '@/components/app/unblocked-ai/AskButton'
+import { pillarKeyForRecommendation } from '@/lib/unblocked-ai/policy'
 
 const priorityStyles: Record<Recommendation['priority'], string> = {
   P0: 'bg-rose-500/10 text-rose-800 border-rose-500/20',
@@ -64,6 +66,15 @@ export default function RecommendationDetailCard({ rec }: { rec: Recommendation 
             <p className="text-xs font-semibold uppercase tracking-wider text-warm-500">Follow-up metric</p>
             <p className="mt-2 text-sm font-medium text-ink">{rec.followUpMetric}</p>
           </div>
+          <AskButton
+            label="Draft an action"
+            question="Draft an action for this."
+            intent="action"
+            pillarKey={pillarKeyForRecommendation(rec.id)}
+            recommendationId={rec.id}
+            surface="recommendations"
+            mode="draft"
+          />
         </div>
       </div>
     </article>
