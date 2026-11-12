@@ -8,6 +8,7 @@ import {
   ListChecks,
   MessageSquare,
   Settings,
+  Sparkles,
   Target,
 } from 'lucide-react'
 
@@ -21,6 +22,7 @@ export const EXEC_NAV: NavItem[] = [
   { href: '/app/overview', label: 'Overview', icon: LayoutDashboard },
   { href: '/app/diagnostics', label: 'Diagnostics', icon: Activity },
   { href: '/app/insights', label: 'Insights', icon: Lightbulb },
+  { href: '/app/unblocked-ai', label: 'UnblockedAI', icon: Sparkles },
   { href: '/app/recommendations', label: 'Recommendations', icon: Target },
   { href: '/app/actions', label: 'Actions', icon: ListChecks },
   { href: '/app/benchmarks', label: 'Benchmarks', icon: BarChart2 },

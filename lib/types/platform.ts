@@ -59,6 +59,8 @@ export type Insight = {
   headline: string
   body: string
   severity: 'positive' | 'neutral' | 'risk'
+  /** Set when the insight is about one pillar UnblockedAI can open. */
+  pillarKey?: PillarKey
 }
 
 export type ThemeCluster = {
@@ -120,4 +122,7 @@ export type ActionItem = {
   lastNote: string
   slackChannel: string
   lastSlackMessageAt: string
+  /** Present on an action saved from UnblockedAI. */
+  measurementNote?: string
+  sourceNote?: string
 }

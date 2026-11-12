@@ -1,6 +1,9 @@
 import SectionHeader from '@/components/app/SectionHeader'
 import EmptyWorkspace from '@/components/app/EmptyWorkspace'
+import AskButton from '@/components/app/unblocked-ai/AskButton'
 import { loadReport } from '@/lib/customers/active'
+import { PILLAR_LABELS } from '@/lib/customers/schema'
+import type { PillarKey } from '@/lib/types/platform'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,9 +37,24 @@ export default function DiagnosticsPage() {
                 </tr>
               </thead>
               <tbody>
-                {report.dimensions.map((row) => (
-                  <tr key={row.dimension} className="border-b border-warm-400/20 last:border-0">
-                    <td className="p-4 font-medium text-ink">{row.dimension}</td>
+                {report.dimensions.map((row) => {
+                  const pillarKey = (Object.keys(PILLAR_LABELS) as PillarKey[]).find((key) => PILLAR_LABELS[key] === row.dimension)
+                  return (
+                  <tr key={row.dimension} id={pillarKey} className="border-b border-warm-400/20 last:border-0">
+                    <td className="p-4 font-medium text-ink">
+                      {row.dimension}
+                      {pillarKey ? (
+                        <div className="mt-2">
+                          <AskButton
+                            label="Ask about this"
+                            question={`Why is ${row.dimension.toLowerCase()} low?`}
+                            intent="explain"
+                            pillarKey={pillarKey}
+                            surface="diagnostics"
+                          />
+                        </div>
+                      ) : null}
+                    </td>
                     <td className="p-4 tabular-nums font-semibold">{row.score}</td>
                     <td className={`p-4 tabular-nums ${report.hasPriorWave ? (row.deltaCycle >= 0 ? 'text-emerald-700' : 'text-rose-700') : 'text-warm-500'}`}>
                       {report.hasPriorWave ? `${row.deltaCycle >= 0 ? '+' : ''}${row.deltaCycle}` : '—'}
@@ -46,7 +64,8 @@ export default function DiagnosticsPage() {
                     </td>
                     <td className="p-4 text-warm-600 capitalize">{row.confidence}</td>
                   </tr>
-                ))}
+                  )
+                })}
               </tbody>
             </table>
           </div>

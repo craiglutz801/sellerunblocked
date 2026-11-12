@@ -3,14 +3,26 @@ import { buildBaselineReport } from '@/lib/customers/baseline-report'
 import { buildDemotechReport } from '@/lib/customers/demotech-report'
 import { buildEmptyReport } from '@/lib/customers/empty-report'
 import { readCatalog, readRevision, readWorkspace } from '@/lib/customers/store'
-import type { CustomerSummary, UserRecord, WorkspaceReport } from '@/lib/customers/types'
+import type { Catalog, CustomerSummary, OrganizationRecord, UserRecord, WorkspaceFile, WorkspaceReport } from '@/lib/customers/types'
 
-export function buildReport(input: {
+export type SelectedWorkspace = {
+  organization: OrganizationRecord
+  workspace: WorkspaceFile
+  catalog: Catalog
+  customers: CustomerSummary[]
+}
+
+/**
+ * The same customer choice the leadership pages use.
+ * Strict mode refuses an unknown or unauthorized slug instead of falling back.
+ * It does not read revision files.
+ */
+export function selectWorkspace(input: {
   root: string
   user: UserRecord
   slug?: string
   strict?: boolean
-}): WorkspaceReport {
+}): SelectedWorkspace {
   const catalog = readCatalog(input.root)
   const readable = readableOrganizations(input.user, catalog)
   if (!readable.length) throw new CustomerDataError('No customer access.', 403)
@@ -33,6 +45,16 @@ export function buildReport(input: {
     isDemo: candidate.isDemo,
   }))
   const workspace = readWorkspace(input.root, organization.slug)
+  return { organization, workspace, catalog, customers }
+}
+
+export function buildReport(input: {
+  root: string
+  user: UserRecord
+  slug?: string
+  strict?: boolean
+}): WorkspaceReport {
+  const { organization, workspace, customers } = selectWorkspace(input)
   if (workspace.project.templateKey === 'demotech-pulse' && workspace.activeRevisionId) {
     return buildDemotechReport(organization, customers)
   }

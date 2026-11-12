@@ -7,14 +7,18 @@ import type { CustomerSummary } from '@/lib/customers/types'
 export default function CustomerSwitcher({
   customers,
   activeSlug,
+  onBeforeChange,
 }: {
   customers: CustomerSummary[]
   activeSlug: string
+  onBeforeChange?: () => void
 }) {
   const router = useRouter()
   const [pending, setPending] = useState(false)
 
   async function onChange(slug: string) {
+    if (slug === activeSlug) return
+    onBeforeChange?.()
     setPending(true)
     try {
       const response = await fetch('/api/workspace', {

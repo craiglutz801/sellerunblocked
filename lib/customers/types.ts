@@ -77,6 +77,10 @@ export type WorkspaceFile = {
   }
   activeRevisionId: string | null
   revisions: RevisionMeta[]
+  /** UnblockedAI text policy. Omitted means seller text can be read in this preview. */
+  settings?: {
+    textProcessing?: boolean
+  }
 }
 
 export type StoredSubmission = {

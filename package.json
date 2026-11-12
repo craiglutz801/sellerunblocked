@@ -14,7 +14,7 @@
     "start:landing": "next start -p 3001",
     "start:app": "next start -p 3002",
     "lint": "next lint",
-    "test": "tsx --test lib/customers/customer-data.test.ts"
+    "test": "tsx --test lib/customers/customer-data.test.ts lib/unblocked-ai/unblocked-ai.test.ts"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",

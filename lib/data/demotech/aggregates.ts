@@ -358,6 +358,7 @@ export function buildInsights(pillars: PillarScore[]): Insight[] {
       headline: 'Enterprise support confidence trails Commercial by a widening margin',
       body: `Enterprise support scores ${entSupport}/100 vs Commercial ${comSupport}/100. Legal review and SE coverage dominate Enterprise open text.`,
       severity: 'risk',
+      pillarKey: 'support',
     },
     {
       id: 'in-2',

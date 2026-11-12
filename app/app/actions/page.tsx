@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import SectionHeader from '@/components/app/SectionHeader'
 import EmptyWorkspace from '@/components/app/EmptyWorkspace'
 import { loadReport } from '@/lib/customers/active'
+import { readSavedActions, measurementFor, toActionItem } from '@/lib/unblocked-ai/actions'
+import { customerRoot } from '@/lib/customers/store'
 
 export const metadata: Metadata = {
   title: 'Actions',
@@ -23,7 +25,10 @@ function StatusLabel({ status }: { status: keyof typeof statusStyles }) {
 export default function ActionsPage() {
   const report = loadReport()
   if (!report.published) return <EmptyWorkspace name={report.organizationName} />
-  const items = report.actions
+  const saved = readSavedActions(customerRoot(), report.slug).map((action) =>
+    toActionItem(action, measurementFor(customerRoot(), report.slug, action)),
+  )
+  const items = [...saved, ...report.actions]
   const totals = {
     open: items.filter((item) => item.status !== 'done').length,
     blocked: items.filter((item) => item.status === 'blocked').length,
@@ -76,6 +81,8 @@ export default function ActionsPage() {
                     <p className="mt-2 text-xs text-warm-500">
                       Owner: {item.owner} · {item.priority}
                     </p>
+                    {item.measurementNote ? <p className="mt-2 text-xs tabular-nums text-ink">{item.measurementNote}</p> : null}
+                    {item.sourceNote ? <p className="mt-1 text-xs text-warm-500">{item.sourceNote}</p> : null}
                   </td>
                   <td className="p-4 text-warm-600">{titleFor(item.recommendationId)}</td>
                   <td className="p-4 text-warm-700 font-medium">{item.assignee}</td>
@@ -90,8 +97,14 @@ export default function ActionsPage() {
                     </div>
                   </td>
                   <td className="p-4">
-                    <p className="text-xs text-warm-500">{item.slackChannel}</p>
-                    <p className="text-[11px] text-warm-500">Last: {item.lastSlackMessageAt}</p>
+                    {item.slackChannel ? (
+                      <>
+                        <p className="text-xs text-warm-500">{item.slackChannel}</p>
+                        <p className="text-[11px] text-warm-500">Last: {item.lastSlackMessageAt}</p>
+                      </>
+                    ) : (
+                      <p className="text-xs text-warm-500">—</p>
+                    )}
                   </td>
                 </tr>
               ))}

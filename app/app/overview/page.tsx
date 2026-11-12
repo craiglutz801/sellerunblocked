@@ -6,7 +6,9 @@ import FrictionHeatmap from '@/components/app/FrictionHeatmap'
 import PillarCard from '@/components/app/cards/PillarCard'
 import ScoreCard from '@/components/app/cards/ScoreCard'
 import TrendSparkline from '@/components/app/charts/TrendSparkline'
+import AskButton from '@/components/app/unblocked-ai/AskButton'
 import { loadReport } from '@/lib/customers/active'
+import { pillarKeyForRecommendation } from '@/lib/unblocked-ai/policy'
 
 export const metadata: Metadata = {
   title: 'Overview',
@@ -70,6 +72,12 @@ export default function OverviewPage() {
             >
               See recommendations
             </Link>
+            <Link
+              href="/app/unblocked-ai"
+              className="inline-flex items-center rounded-full border border-accent/35 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:bg-accent/10 transition-colors"
+            >
+              View UnblockedAI readout
+            </Link>
           </div>
         </div>
         {health.score == null ? (
@@ -131,6 +139,27 @@ export default function OverviewPage() {
                   <p className="mt-1 font-semibold text-ink">{r.title}</p>
                   <p className="mt-2 text-sm text-warm-600 leading-relaxed">{r.issue}</p>
                   <p className="mt-3 text-xs text-warm-500">{r.evidenceSummary}</p>
+                  {pillarKeyForRecommendation(r.id) ? (
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      <AskButton
+                        label="View evidence"
+                        question={`Why is ${r.category.toLowerCase()} low?`}
+                        intent="explain"
+                        pillarKey={pillarKeyForRecommendation(r.id)}
+                        surface="overview"
+                        mode="evidence"
+                      />
+                      <AskButton
+                        label="Draft an action"
+                        question="Draft an action for this."
+                        intent="action"
+                        pillarKey={pillarKeyForRecommendation(r.id)}
+                        recommendationId={r.id}
+                        surface="overview"
+                        mode="draft"
+                      />
+                    </div>
+                  ) : null}
                 </li>
               ))}
             </ul>

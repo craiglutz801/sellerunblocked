@@ -31,6 +31,18 @@ export function canAdminOrganization(user: UserRecord, organizationId: string, m
   )
 }
 
+/** Admins and analysts can save an action draft. Viewers can read the report and ask. */
+export function canWriteActions(user: UserRecord, organizationId: string, memberships: MembershipRecord[]): boolean {
+  if (user.status !== 'active') return false
+  if (user.platformAdmin) return true
+  return memberships.some(
+    (membership) =>
+      membership.userId === user.id &&
+      membership.organizationId === organizationId &&
+      (membership.role === 'admin' || membership.role === 'analyst'),
+  )
+}
+
 export function assertCanRead(user: UserRecord, organization: OrganizationRecord, catalog: Catalog): void {
   if (!canReadOrganization(user, organization.id, catalog.memberships)) {
     throw new CustomerDataError('You do not have access to that customer.', 403)
